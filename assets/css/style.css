@@ -8,6 +8,7 @@
 /* General styles */
 body {
     min-height: 100vh;
+    font-family: "Raleway", sans-serif;
     display: flex;
     flex-direction: column;
     background: url(../images/bluevbackgr.jpg) no-repeat center top/cover;
@@ -32,25 +33,36 @@ body {
 .game-title h1 {
 
     text-align: center;
-    color: white; /*#5cb2d6;*/ 
+    color: /*rgba(189, 6, 6, 0.856);*/ white; /*#5cb2d6;*/ 
     font-size: 3em;
-    text-shadow: 0 0 3px #FF0000, 0 0 5px #3b3b3b;
+    /*text-shadow: black 0.1em 0.1em 0.2em;*/
+    text-shadow: 0 0 2px #FF0000, 0 0 5px #3b3b3b;
     padding: 5px;
 }
 
 .rnd-score {
     display: flex;
     align-items: center;
-    padding: 5px;
+    padding: 20px 5px 10px 5px;
     justify-content:space-between;
+}
+
+.rules-image-container {
+    display: flex;
+    align-items: center;
+}
+
+.rules-image {
+    height: 160px;
+    max-width: 310px;
+    object-fit: contain;
+    object-position: center;
 }
 
 .flag-image-container {
     display: flex;
     align-items: center;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
+    /*border: solid 1px black;*/
     height: 180px;
     width:280px;
 }
@@ -59,28 +71,15 @@ body {
     height: 180px;
     width:280px;
     object-fit: cover;
+    border: solid 1px black;
     /*object-position: center;*/
-}
-
-/*img {
-    height: 250px;
-    max-width: 310px;
-    object-fit: contain;
-}*/
-
-.rules-image {
-    height: 200px;
-    max-width: 310px;
-    object-fit: contain;
-    object-position: center;
 }
 
 .flag-answers {
     display: flex;
     flex-direction: column;
-    padding-top: 5px;
+    padding-top: 20px;
 }
-
 
 .answer-button {
     height: 50px;
@@ -93,9 +92,10 @@ body {
     width: 100%;
     justify-content: center;
     padding: 5px;
+    padding-top: 20px;
 }
 .play-button {
-    height :60px;
+    height :50px;
     width: 100px;
     border-radius: 10%;
     background-color: rgb(148, 209, 56);
@@ -103,18 +103,15 @@ body {
 
 .flag-rules {
     background-color: white;
-    /*margin: 3px 10px;*/
+    border: solid 1px black;
     border-radius: 10px;
-    /*width: fit-content;*/
-    /*padding: 5px;*/
+    margin-left: 10px;
+    margin-right: 10px;
+
 }
 
-/*ul {
-    list-style-position: inside;
- }*/
-
  ul, ol {
-    margin: 0.5em 0.5em 0.5em 1.5em;
+    margin: 8px 8px 8px 24px;
     text-align: left;
   }
 
@@ -128,10 +125,11 @@ body {
     width: 100%;
     justify-content: center;
     padding: 5px;
+    padding-top: 20px;
 }
 
-.quit-rules {
-    height :60px;
+.quit-button {
+    height: 50px;
     width: 100px;
     border-radius: 10%;
     background-color: rgba(247, 49, 49, 0.856);
