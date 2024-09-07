@@ -4,34 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Flag Quiz</title>
+    <title>Welcome</title>
 </head>
 <body>
     <div class = "game-area">
         <div class= "game-title">
-            <h2>Flag</h2>
+            <h1>Flag</h1>
         </div>
-        <div class = "rnd-score">
-            <span id = "rnd"></span>
-            <span id = "score"></span>
+        <div class = "rules-image-container">
+            <img class = "rules-image" id = "rules" src="assets/images/quiz.png">
         </div>
-        <div class = "flag-image">
-            <img id = "flag" src="assets/images/quiz.png">
-
-        </div>
-        <div class = "flag-answers">
-            <button class = "answer-button" id ="answer1">Country 1</button>
-            <button class = "answer-button" id = "answer2">Country 2</button>
-            <button class = "answer-button" id = "answer3">Country 3</button>
-            <button class = "answer-button" id = "answer4">Country 4</button>
-        </div>
-        <div class = "quit-rules">
-            <span class = "quit"></span>
-            <span class = "rules"></span>
+        <div class = "flag-rules">
+                <h2>Quiz Rules</h2>
+                <ul>
+                    <li>
+                        There are 4 rounds with 5 questions in 
+                        each round.<br><br>
+                    </li>
+                    <li>
+                        Each round represents a 
+                        geographic grouping of flags.<br><br>
+                    </li>
+                    <li>
+                        Flag questions are multiple choice. 
+                        Choose 1 correct answer from a list 
+                        of 4 options.<br><br>
+                    </li>
+                    <li>
+                        Each correct flag 
+                        answer earns you 2 points.<br><br>
+                    </li>
+                    <li>
+                        There is a bonus question at the 
+                        end of each round. This is a true or 
+                        false question and is worth 4 points.<br><br>
+                    </li>
+                </ul>           
         </div>
         <div class = "play-control">
-            <button class = "play-button" onclick = "location.href = 'game.html'" >Play</button>
-
+            <button class = "play-button" onclick = "location.href = 'game.html'">Play</button>
         </div>
 
     </div>

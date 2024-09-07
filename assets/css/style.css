@@ -17,43 +17,68 @@ body {
     background: url(../images/backgold.jpg) no-repeat center top/cover;
     display: flex;
     flex-direction: column;
-    max-width: 400px;
+    max-width: 320px;
     align-self: center;
     margin-top: 45px;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 5px;
     padding-right: 5px;
+    border-style: solid;
+    border-color: black; /*#FF0000;*/
+    border-width: 1px;
 }
 
-.game-title h2 {
+.game-title h1 {
 
     text-align: center;
     color: white; /*#5cb2d6;*/ 
     font-size: 3em;
-    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #3b3b3b;
+    padding: 5px;
 }
 
 .rnd-score {
     display: flex;
     align-items: center;
+    padding: 5px;
+    justify-content:space-between;
+}
+
+.flag-image-container {
+    display: flex;
+    align-items: center;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    height: 180px;
+    width:280px;
 }
 
 .flag-image {
-    /*justify-content: center;
-    align-content: center;*/
+    height: 180px;
+    width:280px;
+    object-fit: cover;
+    /*object-position: center;*/
 }
 
-/* Image styles */
-img {
+/*img {
     height: 250px;
-    max-width: 300px;
+    max-width: 310px;
     object-fit: contain;
+}*/
+
+.rules-image {
+    height: 200px;
+    max-width: 310px;
+    object-fit: contain;
+    object-position: center;
 }
 
 .flag-answers {
     display: flex;
     flex-direction: column;
+    padding-top: 5px;
 }
 
 
@@ -70,9 +95,44 @@ img {
     padding: 5px;
 }
 .play-button {
-    height :50px;
-    width: 50px;
-    border-radius: 50%;
+    height :60px;
+    width: 100px;
+    border-radius: 10%;
     background-color: rgb(148, 209, 56);
 }
 
+.flag-rules {
+    background-color: white;
+    /*margin: 3px 10px;*/
+    border-radius: 10px;
+    /*width: fit-content;*/
+    /*padding: 5px;*/
+}
+
+/*ul {
+    list-style-position: inside;
+ }*/
+
+ ul, ol {
+    margin: 0.5em 0.5em 0.5em 1.5em;
+    text-align: left;
+  }
+
+.flag-rules h2 {
+    padding-top: 5px;
+    margin-left: 22px;
+}
+
+.quit-control {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 5px;
+}
+
+.quit-rules {
+    height :60px;
+    width: 100px;
+    border-radius: 10%;
+    background-color: rgba(247, 49, 49, 0.856);
+}
