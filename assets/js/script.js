@@ -72,10 +72,9 @@ function shuffleR1() {
 
     //pick a random index for the displayed flag
     //https://stackoverflow.com/questions/5915096/get-a-random-item-from-a-javascript-array
-    let flagIndex = shortArray[Math.floor(Math.random()*shortArray.length)];
-    console.log(flagIndex.toLowerCase());
-    /*let flagIndexLow = flagIndex.toLowerCase();
-    console.log(flagIndexLow);*/
+    //change the string toLowerCase to match image filename
+    let flagIndex = (shortArray[Math.floor(Math.random()*shortArray.length)].toLowerCase());
+    console.log(flagIndex)
 
     //apply flag image
     let flagDisplay = document.getElementById('flag');
