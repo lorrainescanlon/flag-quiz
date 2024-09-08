@@ -1,4 +1,3 @@
-console.log ('connected');
 
 const eur = ["Andorra", "Austria", "Belgium", "Bulgaria", "Croatia", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Itlay", "Kosovo",
      "Latvia", "Lithuania", "Netherlands", "Norway", "Poland", "Portugal", "Russia", "Scotland", "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden", "Wales"];
@@ -12,4 +11,27 @@ const mea = ["Algeria", "Azerbaijan", "Bahrain", "Democratic Republic of Congo",
 
 const sea = ["Australia", "Bhutan", "Brunei", "China", "East Timor", "Fiji", "india", "Indonesia", "Japan", "korea", "Macau", "Malaysia", "Maldives", "Mongolia", "New Zealand",
     "North Korea", "Pakistan", "Papua New Guinea", "Philippines", "Samoa", "Singapore", "Soloman Islands", "Sri Lanka", "Taiwan", "Thailand", "Vietnam"];
-    
+
+
+function loadGame() {
+    let gameBox = document.getElementById('game-box');
+    gameBox.innerHTML = ` <div class= "game-title">
+            <h1>FLAGS</h1>
+        </div>
+        <div class = "rnd-score">
+            <span id = "rnd"><h4>Round:</h4></span>
+            <span id = "score"><h4>Score:</h4></span>
+        </div>
+        <div class = "flag-image-container">
+            <img class="flag-image" id = "flag" src="assets/images/ireland.png">
+        </div>
+        <div class = "flag-answers">
+            <button class = "answer-button" id ="answer1"><h3>Country1</h3></button>
+            <button class = "answer-button" id = "answer2"><h3>Country 2</h3></button>
+            <button class = "answer-button" id = "answer3"><h3>Country 3</h3></button>
+            <button class = "answer-button" id = "answer4"><h3>Country 4</h3></button>
+        </div>
+        <div class = "quit-control">
+            <button class = "quit-button" onclick = "location.href = 'index.html'">Quit</button>
+        </div>`;
+}
