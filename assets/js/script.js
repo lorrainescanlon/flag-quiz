@@ -39,28 +39,30 @@ function loadGame() {
         <div class = "quit-control">
             <button class = "quit-button" onclick = "location.href = 'index.html'">Quit</button>
         </div>`;
+
+  //Call function to start round 1 of quiz      
   shuffleR1();
     }
 
     /*
-    Use Fisher-Yates Sorting Algorithm to shuffle array for round 1 
+    I used a Fisher-Yates Sorting Algorithm to shuffle array for round 1, I found the code snippet that I based mine on at the following link
     https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript
     */
 
 function shuffleR1() {
     console.log(eur);
-
+    //shuffle the eur array
     for (let i = eur.length -1; i > 0; i --){
         let countryIndex = Math.floor(Math.random()*(i+1));
         [eur[i], eur[countryIndex]] = [eur[countryIndex], eur[i]];
     }
     console.log(eur);
 
-    //create a short array for each flag question
+    //create a new array called shortArray for each flag question with 4 items
     const shortArray = eur.slice(0,4);
     console.log(shortArray);
 
-    //apply array indexes to the buttons
+    //apply shortArray indexes to the buttons
     let country1 = document.getElementById('answer1');
     country1.innerText = shortArray[0];
     let country2 = document.getElementById('answer2');
@@ -70,15 +72,31 @@ function shuffleR1() {
     let country4 = document.getElementById('answer4');
     country4.innerText = shortArray[3];
 
-    //pick a random index for the displayed flag
+    //pick a random index from shortArray for the displayed flag, I found the code snippet the following link
     //https://stackoverflow.com/questions/5915096/get-a-random-item-from-a-javascript-array
     //change the string toLowerCase to match image filename
+    //remove any spaces from string to match filename
     let flagIndex = (shortArray[Math.floor(Math.random()*shortArray.length)].toLowerCase());
+    flagIndex.replace(/\s/g, "");
     console.log(flagIndex)
 
     //apply flag image
     let flagDisplay = document.getElementById('flag');
     flagDisplay.src="../assets/images/"+(flagIndex)+".png";
 
+    /*test to trim white space from country name
+    let doubleName = "Spain";
+    console.log(doubleName);
+    console.log(doubleName.replace(/\s/g, ""));
+    */
+
+    //add event handler for buttons
+
+    //function for correct answer
+
+    //function for incorrect answer
+
 }
+
+
 
