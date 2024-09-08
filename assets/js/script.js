@@ -34,4 +34,17 @@ function loadGame() {
         <div class = "quit-control">
             <button class = "quit-button" onclick = "location.href = 'index.html'">Quit</button>
         </div>`;
+  shuffleR1();
+    }
+
+function shuffleR1() {
+    console.log(eur);
+
+    for (let i = eur.length -1; i > 0; i --){
+        let countryIndex = Math.floor(Math.random()*(i+1));
+        [eur[i], eur[countryIndex]] = [eur[countryIndex], eur[i]];
+    }
+
+    console.log(eur);
+
 }
