@@ -71,6 +71,9 @@ function shuffleR1() {
     country4.innerText = shortArray[3];
 
     //pick a random index for the displayed flag
+    //https://stackoverflow.com/questions/5915096/get-a-random-item-from-a-javascript-array
+    let flagIndex = shortArray[Math.floor(Math.random()*shortArray.length)];
+    console.log(flagIndex);
 
 
 
