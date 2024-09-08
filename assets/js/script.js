@@ -13,6 +13,11 @@ const sea = ["Australia", "Bhutan", "Brunei", "China", "East Timor", "Fiji", "in
     "North Korea", "Pakistan", "Papua New Guinea", "Philippines", "Samoa", "Singapore", "Soloman Islands", "Sri Lanka", "Taiwan", "Thailand", "Vietnam"];
 
 
+    /*
+    load game function called from the start button on index page
+    replace game-box html code
+    */
+
 function loadGame() {
     let gameBox = document.getElementById('game-box');
     gameBox.innerHTML = ` <div class= "game-title">
@@ -37,6 +42,11 @@ function loadGame() {
   shuffleR1();
     }
 
+    /*
+    Use Fisher-Yates Sorting Algorithm to shuffle array for round 1 
+    https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript
+    */
+
 function shuffleR1() {
     console.log(eur);
 
@@ -44,7 +54,8 @@ function shuffleR1() {
         let countryIndex = Math.floor(Math.random()*(i+1));
         [eur[i], eur[countryIndex]] = [eur[countryIndex], eur[i]];
     }
-
     console.log(eur);
-
+    const shortArray = eur.slice(0,4);
+    console.log(shortArray);
 }
+
