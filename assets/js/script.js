@@ -55,7 +55,24 @@ function shuffleR1() {
         [eur[i], eur[countryIndex]] = [eur[countryIndex], eur[i]];
     }
     console.log(eur);
+
+    //create a short array for each flag question
     const shortArray = eur.slice(0,4);
     console.log(shortArray);
+
+    //apply array indexes to the buttons
+    let country1 = document.getElementById('answer1');
+    country1.innerText = shortArray[0];
+    let country2 = document.getElementById('answer2');
+    country2.innerText = shortArray[1];
+    let country3 = document.getElementById('answer3')
+    country3.innerText = shortArray[2];
+    let country4 = document.getElementById('answer4');
+    country4.innerText = shortArray[3];
+
+    //pick a random index for the displayed flag
+
+
+
 }
 
