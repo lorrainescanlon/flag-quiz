@@ -1,5 +1,5 @@
 
-const eur = ["Andorra", "Austria", "Belgium", "Bulgaria", "Croatia", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Itlay", "Kosovo",
+const eur = ["Andorra", "Austria", "Belgium", "Bulgaria", "Croatia", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Italy", "Kosovo",
      "Latvia", "Lithuania", "Netherlands", "Norway", "Poland", "Portugal", "Russia", "Scotland", "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden", "Wales"];
 
 const ame = ["America", "Argentina", "Bahamas", "Bolivia", "Brazil", "Canada", "Chile", "Colombia", "Cuba", "Dominican Republic", "Ecuador", "Greenland", "Grenada", "Guatemala", 
@@ -27,7 +27,7 @@ function loadGame() {
             <span id = "rnd"><h4>Round:</h4></span>
             <span id = "score"><h4>Score:</h4></span>
         </div>
-        <div class = "flag-image-container">
+        <div id = "flag-container" class = "flag-image-container">
             <img class="flag-image" id = "flag" src="assets/images/ireland.png">
         </div>
         <div class = "flag-answers">
@@ -75,7 +75,9 @@ function shuffleR1() {
     let flagIndex = shortArray[Math.floor(Math.random()*shortArray.length)];
     console.log(flagIndex);
 
-
+    //apply flag image
+    let flagDisplay = document.getElementById('flag');
+    flagDisplay.src="../assets/images/"+(flagIndex)+".png";
 
 }
 
