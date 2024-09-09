@@ -31,10 +31,10 @@ function loadGame() {
             <img class="flag-image" id = "flag" src="assets/images/ireland.png">
         </div>
         <div class = "flag-answers">
-            <button class = "answer-button" id ="answer1"><h3>Country1</h3></button>
-            <button class = "answer-button" id = "answer2"><h3>Country 2</h3></button>
-            <button class = "answer-button" id = "answer3"><h3>Country 3</h3></button>
-            <button class = "answer-button" id = "answer4"><h3>Country 4</h3></button>
+            <button class = "answer-button" onclick = "checkAnswer(event)" id ="answer1"><h3>Country1</h3></button>
+            <button class = "answer-button" onclick = "checkAnswer(event)" id = "answer2"><h3>Country 2</h3></button>
+            <button class = "answer-button" onclick = "checkAnswer(event)" id = "answer3"><h3>Country 3</h3></button>
+            <button class = "answer-button" onclick = "checkAnswer(event)" id = "answer4"><h3>Country 4</h3></button>
         </div>
         <div class = "quit-control">
             <button class = "quit-button" onclick = "location.href = 'index.html'">Quit</button>
@@ -50,6 +50,7 @@ function loadGame() {
     */
 
 function shuffleR1() {
+
     console.log(eur);
     //shuffle the eur array
     for (let i = eur.length -1; i > 0; i --){
@@ -75,7 +76,8 @@ function shuffleR1() {
     //pick a random index from shortArray for the displayed flag, I found the code snippet the following link
     //https://stackoverflow.com/questions/5915096/get-a-random-item-from-a-javascript-array
     //change the string toLowerCase to match image filename
-    //remove any spaces from string to match filename
+    //remove any spaces from string to match filename as detailed in the code at the link below
+    //https://stackoverflow.com/questions/10800355/remove-whitespaces-inside-a-string-in-javascript
     let flagIndex = (shortArray[Math.floor(Math.random()*shortArray.length)].toLowerCase());
     flagIndex.replace(/\s/g, "");
     console.log(flagIndex)
@@ -83,20 +85,52 @@ function shuffleR1() {
     //apply flag image
     let flagDisplay = document.getElementById('flag');
     flagDisplay.src="../assets/images/"+(flagIndex)+".png";
+    flagDisplay.alt=(flagIndex);
 
-    /*test to trim white space from country name
-    let doubleName = "Spain";
-    console.log(doubleName);
-    console.log(doubleName.replace(/\s/g, ""));
-    */
-
-    //add event handler for buttons
-
-    //function for correct answer
-
-    //function for incorrect answer
-
+//return flagIndex;
 }
 
 
+/*
+Function to check users answer
+Take the users answer from the DOM button object, transform to lowercase and remove any spaces
+Compare this to the alt attribute on the flag image
+If they match set the button background to green and call the increase score function
+Otherwise chnage the background to red
+*/
+function checkAnswer(event) {
+ let myAnswer = (event.target.innerText).toLowerCase();
+ myAnswer.replace(/\s/g, "");
+ console.log(myAnswer);
+let correctAnswer = document.getElementById('flag').alt;
+console.log(correctAnswer);
+let myAnswerBtn = event.target;
+if (myAnswer === correctAnswer) {
+    myAnswerBtn.style.backgroundColor = "green";
+    increaseScore();
+    } else {
+        myAnswerBtn.style.backgroundColor = "red";
+    }
 
+
+    //set timeout before resetting button backgrounds
+setTimeout(clearAnswers, 1800);
+    
+};
+
+function increaseScore() {
+    let score = 0;
+    score = score + 1;
+    console.log(score);
+}
+
+
+function clearAnswers() {
+    //reset button background colour to white
+    let buttons = document.getElementsByClassName("answer-button");
+    for (let button of buttons) {
+        button.style.backgroundColor = "white"
+    };
+    
+shuffleR1()
+}
