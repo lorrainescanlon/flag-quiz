@@ -84,7 +84,7 @@ function shuffleR1() {
 
     //apply flag image
     let flagDisplay = document.getElementById('flag');
-    flagDisplay.src="../assets/images/"+(flagIndex)+".png";
+    flagDisplay.src="assets/images/"+(flagIndex)+".png";
     flagDisplay.alt=(flagIndex);
 
 //return flagIndex;
