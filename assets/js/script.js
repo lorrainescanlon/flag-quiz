@@ -43,7 +43,7 @@ function loadGame() {
         </div>`;
 
   //Call function to start round 1 of quiz      
-  shuffleR1(eur);
+  shuffleArray(eur);
     }
 
     /*
@@ -51,7 +51,7 @@ function loadGame() {
     https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript
     */
 
-function shuffleR1(array) {
+function shuffleArray(array) {
 
     console.log(array);
     //shuffle the eur array
@@ -60,44 +60,49 @@ function shuffleR1(array) {
         [array[i], array[countryIndex]] = [array[countryIndex], array[i]];
     }
     console.log(array);
+    loadQuest(array);
+}
 
-    //create a new array called shortArray for each flag question with 4 items
-    const shortArray = array.slice(0,4);
-    console.log(shortArray);
+function loadQuest(array) {
+//create a new array called shortArray for each flag question with 4 items
+const shortArray = array.slice(0,4);
+console.log(shortArray);
 
-    //apply shortArray indexes to the buttons innertext
-    let country1 = document.getElementById('answer1');
-    country1.innerText = shortArray[0];
-    let country2 = document.getElementById('answer2');
-    country2.innerText = shortArray[1];
-    let country3 = document.getElementById('answer3')
-    country3.innerText = shortArray[2];
-    let country4 = document.getElementById('answer4');
-    country4.innerText = shortArray[3];
+//apply shortArray indexes to the buttons innertext
+let country1 = document.getElementById('answer1');
+country1.innerText = shortArray[0];
+let country2 = document.getElementById('answer2');
+country2.innerText = shortArray[1];
+let country3 = document.getElementById('answer3')
+country3.innerText = shortArray[2];
+let country4 = document.getElementById('answer4');
+country4.innerText = shortArray[3];
 
 
 
-    //pick a random index from shortArray for the displayed flag, I found the code snippet the following link
-    //https://stackoverflow.com/questions/5915096/get-a-random-item-from-a-javascript-array
-    //change the string toLowerCase to match image filename
-    let flagIndex = (shortArray[Math.floor(Math.random()*shortArray.length)].toLowerCase());
+//pick a random index from shortArray for the displayed flag, I found the code snippet the following link
+//https://stackoverflow.com/questions/5915096/get-a-random-item-from-a-javascript-array
+//change the string toLowerCase to match image filename
+let flagIndex = (shortArray[Math.floor(Math.random()*shortArray.length)].toLowerCase());
 
-    //remove any spaces from string to match filename as detailed in the code at the link below
-    //https://stackoverflow.com/questions/10800355/remove-whitespaces-inside-a-string-in-javascript
-    flagIndex.replace(/\s/g, "");
-    console.log(flagIndex)
+//remove any spaces from string to match filename as detailed in the code at the link below
+//https://stackoverflow.com/questions/10800355/remove-whitespaces-inside-a-string-in-javascript
+flagIndex.replace(/\s/g, "");
+console.log(flagIndex)
 
-    //apply flag image by setting the img src attribute to use variable flagIndex within the filename
-    let flagDisplay = document.getElementById('flag');
-    flagDisplay.src="assets/images/"+(flagIndex)+".png";
+//apply flag image by setting the img src attribute to use variable flagIndex within the filename
+let flagDisplay = document.getElementById('flag');
+flagDisplay.src="assets/images/"+(flagIndex)+".png";
 
-    //set the img alt attribute to the flagIndex value so that this can be used later in the checkAnswer function
-    flagDisplay.alt=(flagIndex);
+//set the img alt attribute to the flagIndex value so that this can be used later in the checkAnswer function
+flagDisplay.alt=(flagIndex);
 
-    document.getElementById('rnd').innerHTML = `<h4>Round: 1</h4>`;
-    //rndNum.innerHTML += <h4>1</h4>;
+document.getElementById('rnd').innerHTML = `<h4>Round: 1</h4>`;
+//rndNum.innerHTML += <h4>1</h4>;
+
 
 }
+
 
 
 /*
@@ -144,5 +149,5 @@ function clearAnswers() {
         button.style.backgroundColor = "white"
     };
     
-shuffleR1(eur)
+shuffleArray(eur)
 }
