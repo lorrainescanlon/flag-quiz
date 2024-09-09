@@ -12,6 +12,8 @@ const mea = ["Algeria", "Azerbaijan", "Bahrain", "Democratic Republic of Congo",
 const sea = ["Australia", "Bhutan", "Brunei", "China", "East Timor", "Fiji", "india", "Indonesia", "Japan", "korea", "Macau", "Malaysia", "Maldives", "Mongolia", "New Zealand",
     "North Korea", "Pakistan", "Papua New Guinea", "Philippines", "Samoa", "Singapore", "Soloman Islands", "Sri Lanka", "Taiwan", "Thailand", "Vietnam"];
 
+let score = 0;
+
 
     /*
     load game function called from the start button on index page
@@ -25,7 +27,7 @@ function loadGame() {
         </div>
         <div class = "rnd-score">
             <span id = "rnd"></span>
-            <span id = "score"><h4>Score:</h4></span>
+            <span id = "score">Score: 0</span>
         </div>
         <div id = "flag-container" class = "flag-image-container">
             <img class="flag-image" id = "flag" src="assets/images/ireland.png">
@@ -92,7 +94,7 @@ function shuffleR1(array) {
     //set the img alt attribute to the flagIndex value so that this can be used later in the checkAnswer function
     flagDisplay.alt=(flagIndex);
 
-    document.getElementById('rnd').innerHTML += `<h4>Round: 1</h4>`;
+    document.getElementById('rnd').innerHTML = `<h4>Round: 1</h4>`;
     //rndNum.innerHTML += <h4>1</h4>;
 
 }
@@ -121,14 +123,14 @@ if (myAnswer === correctAnswer) {
 
 
     //set timeout before resetting button backgrounds
-setTimeout(clearAnswers, 1800);
+setTimeout(clearAnswers, 2000);
     
 };
 
 function increaseScore() {
-    let score = 0;
     score = score + 1;
     console.log(score);
+    document.getElementById('score').innerHTML = `<h4>Score:${(score)}</h4>`;
 }
 
 
