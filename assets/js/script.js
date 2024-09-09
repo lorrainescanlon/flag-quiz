@@ -11,7 +11,9 @@ const mea = ["Algeria", "Azerbaijan", "Bahrain", "Democratic Republic of Congo",
 const sea = ["Australia", "Bhutan", "Brunei", "China", "East Timor", "Fiji", "india", "Indonesia", "Japan", "korea", "Macau", "Malaysia", "Maldives", "Mongolia", "New Zealand",
    "North Korea", "Pakistan", "Papua New Guinea", "Philippines", "Samoa", "Singapore", "Soloman Islands", "Sri Lanka", "Taiwan", "Thailand", "Vietnam"];
 
-const used = [];
+var used = [];
+
+var array = [];
 
 
 let score = 0;
@@ -42,8 +44,9 @@ function loadGame() {
            <button class = "quit-button" onclick = "location.href = 'index.html'">Quit</button>
        </div>`;
 
- //Call function to start round 1 of quiz by passing the eur array      
- shuffleArray(eur);
+ //Call function to start round 1 of quiz by passing the eur array 
+ array = eur.slice();     
+ shuffleArray(array);
 }
 
 
@@ -53,24 +56,23 @@ I used a Fisher-Yates Sorting Algorithm to shuffle array for round 1, I found th
 https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript
 */
 
-function shuffleArray(array) {
-
-   console.log(array);
+function shuffleArray() {
    for (let i = array.length -1; i > 0; i --){
        let countryIndex = Math.floor(Math.random()*(i+1));
        [array[i], array[countryIndex]] = [array[countryIndex], array[i]];
    }
    console.log(array);
    console.log(eur);
-   loadQuest(array);
+   loadQuest();
 }
 
 
 //Function to create a new array called shortArray for each flag question with 4 items
 
-function loadQuest(array) {
-    const shortArray = array.slice(0,4);
+function loadQuest() {
+    let shortArray = array.slice(0, 4);
     console.log(shortArray);
+    console.log(array);
 
     //apply shortArray indexes to the buttons innertext
     let country1 = document.getElementById('answer1');
@@ -149,6 +151,7 @@ function clearAnswers() {
    for (let button of buttons) {
        button.style.backgroundColor = "white"
     };
+
    
-   shuffleArray(eur)
+   shuffleArray()
 }
