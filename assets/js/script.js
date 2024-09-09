@@ -24,7 +24,7 @@ function loadGame() {
             <h1>FLAGS</h1>
         </div>
         <div class = "rnd-score">
-            <span id = "rnd"><h4>Round:</h4></span>
+            <span id = "rnd"></span>
             <span id = "score"><h4>Score:</h4></span>
         </div>
         <div id = "flag-container" class = "flag-image-container">
@@ -41,7 +41,7 @@ function loadGame() {
         </div>`;
 
   //Call function to start round 1 of quiz      
-  shuffleR1();
+  shuffleR1(eur);
     }
 
     /*
@@ -49,21 +49,21 @@ function loadGame() {
     https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript
     */
 
-function shuffleR1() {
+function shuffleR1(array) {
 
-    console.log(eur);
+    console.log(array);
     //shuffle the eur array
-    for (let i = eur.length -1; i > 0; i --){
+    for (let i = array.length -1; i > 0; i --){
         let countryIndex = Math.floor(Math.random()*(i+1));
-        [eur[i], eur[countryIndex]] = [eur[countryIndex], eur[i]];
+        [array[i], array[countryIndex]] = [array[countryIndex], array[i]];
     }
-    console.log(eur);
+    console.log(array);
 
     //create a new array called shortArray for each flag question with 4 items
-    const shortArray = eur.slice(0,4);
+    const shortArray = array.slice(0,4);
     console.log(shortArray);
 
-    //apply shortArray indexes to the buttons
+    //apply shortArray indexes to the buttons innertext
     let country1 = document.getElementById('answer1');
     country1.innerText = shortArray[0];
     let country2 = document.getElementById('answer2');
@@ -73,21 +73,28 @@ function shuffleR1() {
     let country4 = document.getElementById('answer4');
     country4.innerText = shortArray[3];
 
+
+
     //pick a random index from shortArray for the displayed flag, I found the code snippet the following link
     //https://stackoverflow.com/questions/5915096/get-a-random-item-from-a-javascript-array
     //change the string toLowerCase to match image filename
+    let flagIndex = (shortArray[Math.floor(Math.random()*shortArray.length)].toLowerCase());
+
     //remove any spaces from string to match filename as detailed in the code at the link below
     //https://stackoverflow.com/questions/10800355/remove-whitespaces-inside-a-string-in-javascript
-    let flagIndex = (shortArray[Math.floor(Math.random()*shortArray.length)].toLowerCase());
     flagIndex.replace(/\s/g, "");
     console.log(flagIndex)
 
-    //apply flag image
+    //apply flag image by setting the img src attribute to use variable flagIndex within the filename
     let flagDisplay = document.getElementById('flag');
     flagDisplay.src="assets/images/"+(flagIndex)+".png";
+
+    //set the img alt attribute to the flagIndex value so that this can be used later in the checkAnswer function
     flagDisplay.alt=(flagIndex);
 
-//return flagIndex;
+    document.getElementById('rnd').innerHTML += `<h4>Round: 1</h4>`;
+    //rndNum.innerHTML += <h4>1</h4>;
+
 }
 
 
@@ -135,5 +142,5 @@ function clearAnswers() {
         button.style.backgroundColor = "white"
     };
     
-shuffleR1()
+shuffleR1(eur)
 }
