@@ -1,5 +1,5 @@
-const eur = ["Andorra", "Austria", "Belgium", "Bulgaria", "Croatia", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Italy", "Kosovo",
-    "Latvia", "Lithuania", "Netherlands", "Norway", "Poland", "Portugal", "Russia", "Scotland", "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden", "Wales"];
+const eur = ["Andorra", "Austria", "Belgium", "Bulgaria", "Croatia", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Iceland" , "Ireland", "Italy",
+    "Kosovo", "Latvia", "Lithuania", "Netherlands", "Norway", "Poland", "Portugal", "Russia", "Scotland", "Serbia" , "Slovakia", "Slovenia" , "Spain", "Sweden", "Wales"];
 
 const ame = ["America", "Argentina", "Bahamas", "Bolivia", "Brazil", "Canada", "Chile", "Colombia", "Cuba", "Dominican Republic", "Ecuador", "Greenland", "Grenada", "Guatemala", 
    "Guyana", "Haiti", "Honduras", "Jamaica", "Mexico", "Panama", "Peru", "Puerto Rico", "Saint Lucia", "Suriname", "Trinidad and Tobago", "Uruguay", "Venezuela"];
@@ -17,6 +17,7 @@ var array = [];
 
 
 let score = 0;
+let flagCount = 0;
 
 
 
@@ -28,7 +29,7 @@ function loadGame() {
            <h1>FLAGS</h1>
        </div>
        <div class = "rnd-score">
-           <span id = "rnd"></span>
+           <span id = "rnd">Flag ${(flagCount)} of 20</h4></span>
            <span id = "score">Score: 0</span>
        </div>
        <div id = "flag-container" class = "flag-image-container">
@@ -101,8 +102,11 @@ function loadQuest() {
     //set the img alt attribute to the flagIndex value so that this can be used later in the checkAnswer function
     flagDisplay.alt=(flagIndex);
 
-    document.getElementById('rnd').innerHTML = `<h4>Round: 1</h4>`;
-    //rndNum.innerHTML += <h4>1</h4>;
+    //set flag counter
+    flagCount = flagCount + 1;
+    console.log(flagCount);
+    document.getElementById('rnd').innerHTML = `<h4>Flag ${(flagCount)} of 20</h4>`;
+
 }
 
 
@@ -123,18 +127,19 @@ function checkAnswer(event) {
     let myAnswerBtn = event.target;
     if (myAnswer === correctAnswer) {
         myAnswerBtn.style.backgroundColor = "green";
-        used.push(myAnswer);
-        console.log(used);
+        //used.push(myAnswer);
+        //console.log(used);
         increaseScore();
     } else {
        myAnswerBtn.style.backgroundColor = "red";
     }
 
    //set timeout before resetting button backgrounds
-    setTimeout(clearAnswers, 2000);
-   
+    setTimeout(clearAnswers, 1000);
+    removeFlag();
 };
 
+// Increase score
 function increaseScore() {
    score = score + 1;
    console.log(score);
@@ -152,6 +157,23 @@ function clearAnswers() {
        button.style.backgroundColor = "white"
     };
 
-   
    shuffleArray()
+}
+
+function removeFlag() {
+    let correctFlag = (document.getElementById('flag').alt);
+
+    //Make first letter of correctFlagC uppercase
+    //I used the folowing resource to help write this code https://www.freecodecamp.org/news/javascript-capitalize-first-letter-of-word/
+    let correctFlagC = correctFlag.charAt(0).toUpperCase()+ correctFlag.slice(1);
+
+    //Find the index of correctFlagC country in array
+    //I used the following resource to help write this code https://sentry.io/answers/remove-specific-item-from-array/
+    let usedFlag = array.indexOf(correctFlagC);
+
+    if (usedFlag > -1) {
+        array.splice(usedFlag, 1);
+    }
+    
+    console.log(array);
 }
