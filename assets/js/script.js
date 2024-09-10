@@ -127,16 +127,14 @@ function checkAnswer(event) {
     let myAnswerBtn = event.target;
     if (myAnswer === correctAnswer) {
         myAnswerBtn.style.backgroundColor = "green";
-        //used.push(myAnswer);
-        //console.log(used);
         increaseScore();
     } else {
        myAnswerBtn.style.backgroundColor = "red";
     }
 
    //set timeout before resetting button backgrounds
-    setTimeout(clearAnswers, 1000);
-    removeFlag();
+   setTimeout(clearAnswers, 1000);
+   removeFlag();
 };
 
 // Increase score
@@ -157,7 +155,12 @@ function clearAnswers() {
        button.style.backgroundColor = "white"
     };
 
-   shuffleArray()
+    if (flagCount < 20){
+        shuffleArray();
+    } else {
+        endGame();
+    }
+   
 }
 
 function removeFlag() {
@@ -177,3 +180,12 @@ function removeFlag() {
     
     console.log(array);
 }
+
+function endGame(){
+       
+    console.log(flagCount);
+    console.log(score);
+    console.log("you have finished the game, Well done!");
+    alert('game over');
+}
+
