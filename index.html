@@ -21,15 +21,10 @@
             <img class = "rules-image" id = "rules" src="assets/images/quiz.png">
         </div>
         <div class = "flag-rules">
-                <h2>Quiz Rules</h2>
+                <h3>Quiz Rules</h3>
                 <ul>
                     <li>
-                        There are 4 rounds with 5 flags to identify in 
-                        each round.<br><br>
-                    </li>
-                    <li>
-                        Each round represents a 
-                        geographic grouping of flags.<br><br>
+                        There are 20 flag questions per game.
                     </li>
                     <li>
                         Flag questions are multiple choice. 
@@ -38,18 +33,19 @@
                     </li>
                     <li>
                         Each correct flag 
-                        answer earns you 2 points.<br><br>
+                        answer earns you 1 point.<br><br>
                     </li>
-                    <li>
-                        There is a bonus question at the 
-                        end of each round. This is a true or 
-                        false question and is worth 4 points.<br><br>
-                    </li>
-                </ul>           
+                </ul> 
+                <h4>Enter a Username to continue</h4><br>
+                <form id = "username">
+                    <label for = "uname">Username: </label>
+                    <input type = "text" id = "uname" name = "uname" required><br><br>
+                    <input type = "submit" onclick = "loadGame()"value = "Play Game"><br><br>
+                </form>       
         </div>
-        <div class = "play-control">
+        <!--<div class = "play-control">
             <button class = "play-button" onclick = "loadGame()">Play</button>
-        </div>
+        </div>-->
 
     </div>
     

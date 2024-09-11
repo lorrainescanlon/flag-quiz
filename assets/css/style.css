@@ -114,7 +114,7 @@ body {
     text-align: left;
   }
 
-.flag-rules h2 {
+.flag-rules h2, h3, h4 {
     padding-top: 5px;
     margin-left: 22px;
 }
