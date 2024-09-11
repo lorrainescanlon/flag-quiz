@@ -22,7 +22,6 @@ let flagCount = 0;
 
 
 //load game function called from the start button on index page replace game-box html code
-
 function loadGame() {
    let gameBox = document.getElementById('game-box');
    gameBox.innerHTML = ` <div class= "game-title">
@@ -56,7 +55,6 @@ Function to shuffle array and pass it to the loadQuest function
 I used a Fisher-Yates Sorting Algorithm to shuffle array for round 1, I found the code snippet that I based mine on at the following link
 https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript
 */
-
 function shuffleArray() {
    for (let i = array.length -1; i > 0; i --){
        let countryIndex = Math.floor(Math.random()*(i+1));
@@ -69,7 +67,6 @@ function shuffleArray() {
 
 
 //Function to create a new array called shortArray for each flag question with 4 items
-
 function loadQuest() {
     let shortArray = array.slice(0, 4);
     console.log(shortArray);
@@ -110,18 +107,17 @@ function loadQuest() {
 }
 
 
-/*
-Function to check users answer
-Take the users answer from the DOM button object, transform to lowercase and remove any spaces
-Compare this to the alt attribute on the flag image
-If they match set the button background to green, add that flag to the used array and call the increase score function
-Otherwise chnage the background to red
-*/
-
+//Function to check users answer
 function checkAnswer(event) {
+    //Take the users answer from the DOM button object, transform to lowercase and remove any spaces
     let myAnswer = (event.target.innerText).toLowerCase();
     myAnswer.replace(/\s/g, "");
     console.log(myAnswer);
+    /*
+    Compare this to the alt attribute on the flag image
+    If they match set the button background to green and call the increase score function
+    Otherwise change the background to red
+    */
     let correctAnswer = document.getElementById('flag').alt;
     console.log(correctAnswer);
     let myAnswerBtn = event.target;
@@ -144,7 +140,7 @@ function increaseScore() {
    document.getElementById('score').innerHTML = `<h4>Score:${(score)}</h4>`;
 }
 
-
+//Function to clear answer buttons and load another flag 
 function clearAnswers() {
    //reset button background colour to white
    //the elements are returned as an array so a for let is used to reset the background style as detailed in the following post
@@ -155,14 +151,16 @@ function clearAnswers() {
        button.style.backgroundColor = "white"
     };
 
+    //If flagcount is less than 20 load another flag and answers
     if (flagCount < 20){
         shuffleArray();
     } else {
-        endGame();
+        gameOver();
     }
    
 }
 
+//Function to remove used flag from the array in order to eliminate repetition 
 function removeFlag() {
     let correctFlag = (document.getElementById('flag').alt);
 
@@ -179,13 +177,29 @@ function removeFlag() {
     }
     
     console.log(array);
+    console.log(used);
 }
 
-function endGame(){
-       
-    console.log(flagCount);
-    console.log(score);
-    console.log("you have finished the game, Well done!");
-    alert('game over');
+
+// Game over function to display final score and reset score and flagcount to 0.
+function gameOver(){
+    //Change innerhtml to display message and score. Set Play Again button to call the loadgame function.
+  let gameBox = document.getElementById('game-box');
+  gameBox.innerHTML = `
+    <div class= "game-title"> 
+        <h1>Game Over</h1>
+    </div>
+
+    <div class = "flag-rules">
+        <h2>Well done!</h2>
+        <h2>You scored ${score}</h2>
+    </div>
+    <div class = "play-control">
+        <button class = "play-button" onclick = "loadGame()">Play Again</button>
+    </div>`;
+    //reset score and flagcount variables
+    score = 0; 
+    flagCount = 0;
+    
 }
 
