@@ -11,11 +11,7 @@ const mea = ["Algeria", "Azerbaijan", "Bahrain", "Democratic Republic of Congo",
 const sea = ["Australia", "Bhutan", "Brunei", "China", "East Timor", "Fiji", "india", "Indonesia", "Japan", "korea", "Macau", "Malaysia", "Maldives", "Mongolia", "New Zealand",
    "North Korea", "Pakistan", "Papua New Guinea", "Philippines", "Samoa", "Singapore", "Soloman Islands", "Sri Lanka", "Taiwan", "Thailand", "Vietnam"];
 
-var used = [];
-
 var array = [];
-
-
 let score = 0;
 let flagCount = 0;
 
@@ -156,8 +152,7 @@ function clearAnswers() {
         shuffleArray();
     } else {
         gameOver();
-    }
-   
+    }   
 }
 
 //Function to remove used flag from the array in order to eliminate repetition 
@@ -175,9 +170,6 @@ function removeFlag() {
     if (usedFlag > -1) {
         array.splice(usedFlag, 1);
     }
-    
-    console.log(array);
-    console.log(used);
 }
 
 
