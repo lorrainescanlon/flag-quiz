@@ -14,11 +14,12 @@ const sea = ["Australia", "Bhutan", "Brunei", "China", "East Timor", "Fiji", "in
 var array = [];
 let score = 0;
 let flagCount = 0;
+let username = ""
 
 //validate username
 function validateName(event) {
     event.preventDefault();
-    let username = usernameInput.elements['username'].value;
+    username = usernameInput.elements['username'].value;
     console.log(username);
     loadGame();
 }
@@ -193,7 +194,7 @@ function gameOver(){
     </div>
 
     <div class = "flag-rules">
-        <h2>Well done!</h2>
+        <h2>Well done ${username}!</h2>
         <h2>You scored ${score}</h2>
     </div>
     <div class = "play-control">
