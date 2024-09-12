@@ -11,6 +11,8 @@ const mea = ["Algeria", "Azerbaijan", "Bahrain", "Democratic Republic of Congo",
 const sea = ["Australia", "Bhutan", "Brunei", "China", "East Timor", "Fiji", "india", "Indonesia", "Japan", "korea", "Macau", "Malaysia", "Maldives", "Mongolia", "New Zealand",
    "North Korea", "Pakistan", "Papua New Guinea", "Philippines", "Samoa", "Singapore", "Soloman Islands", "Sri Lanka", "Taiwan", "Thailand", "Vietnam"];
 
+const scores = [{userName: "Sarah", score: 10}, {userName: "John", score: 14}, {userName: "Jack", score: 8}];
+
 var array = [];
 let score = 0;
 let flagCount = 0;
@@ -186,6 +188,8 @@ function removeFlag() {
 
 // Game over function to display final score and reset score and flagcount to 0.
 function gameOver(){
+   scores.push({userName: (username), score: (score)});
+   console.log(scores);
     //Change innerhtml to display message and score. Set Play Again button to call the loadgame function.
   let gameBox = document.getElementById('game-box');
   gameBox.innerHTML = `
