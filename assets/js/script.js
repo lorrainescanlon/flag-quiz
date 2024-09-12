@@ -15,6 +15,16 @@ var array = [];
 let score = 0;
 let flagCount = 0;
 
+//validate username
+function validateName(event) {
+    event.preventDefault();
+    let username = usernameInput.elements['username'].value;
+    console.log(username);
+    loadGame();
+}
+
+let usernameForm = document.getElementById('usernameInput');
+usernameForm.addEventListener('submit', validateName);
 
 
 //load game function called from the start button on index page replace game-box html code
