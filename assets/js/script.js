@@ -188,8 +188,15 @@ function removeFlag() {
 
 // Game over function to display final score and reset score and flagcount to 0.
 function gameOver(){
+    //push username and score to scores array
    scores.push({userName: (username), score: (score)});
    console.log(scores);
+   
+   //sort scores array in descending order of score as described at the following link https://www.w3schools.com/jsref/jsref_sort.asp
+
+   scores.sort(function(a, b){return b.score-a.score});
+   console.log(scores);
+
     //Change innerhtml to display message and score. Set Play Again button to call the loadgame function.
   let gameBox = document.getElementById('game-box');
   gameBox.innerHTML = `
