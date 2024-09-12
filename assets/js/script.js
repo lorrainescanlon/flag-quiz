@@ -193,7 +193,6 @@ function gameOver(){
    console.log(scores);
    
    //sort scores array in descending order of score as described at the following link https://www.w3schools.com/jsref/jsref_sort.asp
-
    scores.sort(function(a, b){return b.score-a.score});
    console.log(scores);
 
@@ -207,7 +206,14 @@ function gameOver(){
     <div class = "flag-rules">
         <h2>Well done ${username}!</h2>
         <h2>You scored ${score}</h2>
+        <table class = "scores-table">
+            <tr>
+              <th>Username</th>
+              <th>Score</th>
+            </tr>
+        </table>
     </div>
+
     <div class = "play-control">
         <button class = "play-button" onclick = "loadGame()">Play Again</button>
     </div>`;
