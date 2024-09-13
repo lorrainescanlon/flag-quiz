@@ -139,10 +139,9 @@ body {
     margin-top: 10px;
     padding: 5px;
     width: 100%;
-    border: 1px solid;
 }
 
 .scores-table th, td {
-    border: 1px solid;
+   border-style: groove;
     
 }
