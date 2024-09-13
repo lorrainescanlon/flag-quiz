@@ -207,10 +207,32 @@ function gameOver(){
         <h2>Well done ${username}!</h2>
         <h2>You scored ${score}</h2>
         <table class = "scores-table">
-            <tr>
-              <th>Username</th>
-              <th>Score</th>
-            </tr>
+            <tbody>
+                <tr>
+                  <th>Username</th>
+                  <th>Score</th>
+                </tr>
+                <tr>
+                  <td>test</td>
+                  <td>test</td>
+                </tr>
+                <tr>
+                  <td>test</td>
+                  <td>test</td>
+                </tr>
+                <tr>
+                  <td>test</td>
+                  <td>test</td>
+                </tr>
+                <tr>
+                  <td>test</td>
+                  <td>test</td>
+                </tr>
+                <tr>
+                  <td>test</td>
+                  <td>test</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 
