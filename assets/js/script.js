@@ -206,12 +206,10 @@ function gameOver(){
     <div class = "flag-rules">
         <h2>Well done ${username}!</h2>
         <h2>You scored ${score}</h2>
-        <table class = "scores-table">
+        <table id = "s-table" class = "scores-table">
             <tbody>
-                <tr>
-                  <th>Username</th>
-                  <th>Score</th>
-                </tr>
+                <th>Username</th>
+                <th>Score</th>
                 <tr>
                   <td>test</td>
                   <td>test</td>
@@ -243,5 +241,32 @@ function gameOver(){
     score = 0; 
     flagCount = 0;
     
+
+    /*for(let i=0; i<=5; i++)
+        {
+           let x = document.getElementById("s-table").rows[i].cells[i];
+           x.innerHTML = (scores[i].userName);
+           let y = document.getElementById("s-table").rows[i].cells[(i+1)];
+           y.innerHTML = (scores[i].score);
+        };*/
+    let i = 0;
+    do {
+        let x = document.getElementById("s-table").rows[(i+1)].cells[0];
+        x.innerText = (scores[i].userName);
+        i++;
+        console.log(i);
+        }
+    while (i<=5);
+    
+    let b = 0;
+    do {
+        let y = document.getElementById("s-table").rows[b].cells[(b+1)];
+        y.innerText = (scores[b].score); 
+        b++;
+        console.log(b);
+        }
+    while (b<=5);
+    
+    console.log(scores);
 }
 
