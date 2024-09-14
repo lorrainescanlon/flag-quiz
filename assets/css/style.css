@@ -43,8 +43,9 @@ body {
 
 .rnd-score {
     display: flex;
-    align-items: center;
-    padding: 20px 5px 10px 5px;
+    /*align-items: center;*/
+    margin: 10px 10px 10px 15px;
+    /*padding: 20px 10px 10px 0px;*/
     justify-content:space-between;
 }
 
@@ -74,6 +75,10 @@ body {
     border: solid 1px black;
 }
 
+.flag-image:hover {
+    transform: scale(1.25);
+}
+
 .flag-answers {
     display: flex;
     flex-direction: column;
@@ -86,19 +91,31 @@ body {
     margin: 3px 10px;
 }
 
+.answer-button:hover {
+    font-size: 125%;
+    transform: scale(1.02);
+}
+
 .play-control {
     display: flex;
+    flex-direction: column;
     width: 100%;
-    justify-content: center;
+    align-items: center;
     padding: 5px;
     padding-top: 20px;
 }
+
 .play-button {
     height :50px;
     width: 100px;
     border-radius: 10%;
     background-color: rgb(148, 209, 56);
 }
+.play-button:hover {
+    box-shadow: 0.3em 0.3em 0 0 grey;
+    font-weight: bold;
+}
+
 
 .flag-rules {
     background-color: white;
@@ -114,7 +131,7 @@ body {
     text-align: left;
   }
 
-.flag-rules h2, h3, h4 {
+.flag-rules h2, h3 {
     padding-top: 5px;
     margin-left: 22px;
 }
@@ -130,10 +147,18 @@ body {
 .quit-button {
     height: 50px;
     width: 100px;
+    border: solid 1px black;
     border-radius: 10%;
     background-color: rgba(247, 49, 49, 0.856);
+    
 }
+.quit-button:hover {
+    /*font-size: 125%;
+    transform: scale(1.02);*/
+    box-shadow: 0.3em 0.3em 0 0 grey;
+    font-weight: bold;
 
+}
 
 .scores-table {
     margin-top: 10px;

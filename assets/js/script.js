@@ -11,7 +11,7 @@ const mea = ["Algeria", "Azerbaijan", "Bahrain", "Democratic Republic of Congo",
 const sea = ["Australia", "Bhutan", "Brunei", "China", "East Timor", "Fiji", "india", "Indonesia", "Japan", "korea", "Macau", "Malaysia", "Maldives", "Mongolia", "New Zealand",
    "North Korea", "Pakistan", "Papua New Guinea", "Philippines", "Samoa", "Singapore", "Soloman Islands", "Sri Lanka", "Taiwan", "Thailand", "Vietnam"];
 
-const scores = [{userName: "Sarah", score: 10}, {userName: "John", score: 14}, {userName: "Jack", score: 8}, {userName: "Laura", score: 16}, {userName: "Matthew", score: 15}];
+const scores = [{userName: "Sarah", score: 10}, {userName: "John", score: 14}, {userName: "Jack", score: 8}, {userName: "Laura", score: 16}];
 
 var array = [];
 let score = 0;
@@ -37,8 +37,8 @@ function loadGame() {
            <h1>FLAGS</h1>
        </div>
        <div class = "rnd-score">
-           <span id = "rnd">Flag ${(flagCount)} of 20</h4></span>
-           <span id = "score">Score: 0</span>
+           <span id = "rnd"><h4>Flag ${(flagCount)} of 20</h4></span>
+           <span id = "score"><h4>Score: 0</h4></span>
        </div>
        <div id = "flag-container" class = "flag-image-container">
            <img class="flag-image" id = "flag" src="assets/images/ireland.png">
@@ -237,9 +237,7 @@ function gameOver(){
     <div class = "play-control">
         <button class = "play-button" onclick = "loadGame()">Play Again</button>
     </div>`;
-    //reset score and flagcount variables
-    score = 0; 
-    flagCount = 0;
+
     
     // Populate scores table with top 5 scores from scores array using do while loop
     let i = 0;
@@ -251,6 +249,10 @@ function gameOver(){
         i++;
         }
     while (i<=4);
+        
+    //reset score and flagcount variables
+    score = 0; 
+    flagCount = 0;
 
 }
 
