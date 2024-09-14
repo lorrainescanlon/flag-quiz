@@ -241,6 +241,7 @@ function gameOver(){
     score = 0; 
     flagCount = 0;
     
+    // Populate scores table with top 5 scores from scores array using do while loop
     let i = 0;
     do {
         let x = document.getElementById("s-table").rows[(i+1)].cells[0];
