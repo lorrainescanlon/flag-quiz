@@ -11,7 +11,7 @@ const mea = ["Algeria", "Azerbaijan", "Bahrain", "Democratic Republic of Congo",
 const sea = ["Australia", "Bhutan", "Brunei", "China", "East Timor", "Fiji", "india", "Indonesia", "Japan", "korea", "Macau", "Malaysia", "Maldives", "Mongolia", "New Zealand",
    "North Korea", "Pakistan", "Papua New Guinea", "Philippines", "Samoa", "Singapore", "Soloman Islands", "Sri Lanka", "Taiwan", "Thailand", "Vietnam"];
 
-const scores = [{userName: "Sarah", score: 10}, {userName: "John", score: 14}, {userName: "Jack", score: 8}];
+const scores = [{userName: "Sarah", score: 10}, {userName: "John", score: 14}, {userName: "Jack", score: 8}, {userName: "Laura", score: 16}, {userName: "Matthew", score: 15}];
 
 var array = [];
 let score = 0;
@@ -241,32 +241,15 @@ function gameOver(){
     score = 0; 
     flagCount = 0;
     
-
-    /*for(let i=0; i<=5; i++)
-        {
-           let x = document.getElementById("s-table").rows[i].cells[i];
-           x.innerHTML = (scores[i].userName);
-           let y = document.getElementById("s-table").rows[i].cells[(i+1)];
-           y.innerHTML = (scores[i].score);
-        };*/
     let i = 0;
     do {
         let x = document.getElementById("s-table").rows[(i+1)].cells[0];
         x.innerText = (scores[i].userName);
+        let y = document.getElementById("s-table").rows[(i+1)].cells[1];
+        y.innerText = (scores[i].score); 
         i++;
-        console.log(i);
         }
-    while (i<=5);
-    
-    let b = 0;
-    do {
-        let y = document.getElementById("s-table").rows[b].cells[(b+1)];
-        y.innerText = (scores[b].score); 
-        b++;
-        console.log(b);
-        }
-    while (b<=5);
-    
-    console.log(scores);
+    while (i<=4);
+
 }
 
