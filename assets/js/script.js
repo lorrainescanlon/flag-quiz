@@ -203,7 +203,7 @@ function gameOver(){
         <h1>Game Over</h1>
     </div>
 
-    <div class = "flag-rules">
+    <div class = "score-board-rules">
         <h2>Well done ${username}!</h2>
         <h2>You scored ${score}</h2>
         <table id = "s-table" class = "scores-table">
