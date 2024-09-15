@@ -1,18 +1,17 @@
 
 
 
-# Brendan the Navigator
+# Flag Quiz
 
-## Code Institute - Milestone Project 2: User Centric Frontend Development.
+## Code Institute - Milestone Project 2: Interactive Front-end web application.
 
-This website was created to demonstrate my ability to design and develop an interactive website.
+This website was created to demonstrate my ability to design and develop an interactive web application.
 
-Flag Quiz is a site that hopes to introduce people to the man behind Saint Brendan, the fearless adventurer with a love for travelling on the sea.
-This website aims to bring this figure and his lengendary voyage into the mainstream and make him appealing to all and not just people of faith. 
+Flag Quiz is an interactive game designed for school going children. The site aims to engage children in learning in a fun way.
 
 # Table of Contents
 - [Flag Quiz](#flag-quiz)
-  - [Code Institute - Second Milestone Project: User Centric Frontend Development.](#code-institute---second-milestone-project-user-centric-frontend-development)
+  - [Code Institute - Second Milestone Project: Interactive Front-end web application.](#code-institute---second-milestone-project-interactive-frontend-web-application)
 - [Table of Contents](#table-of-contents)
   - [Demo](#demo)
     - [A live demo website can be found here](#a-live-demo-of-the-website-can-be-found-here)
@@ -42,38 +41,35 @@ This website aims to bring this figure and his lengendary voyage into the mainst
 ## Demo
 ![How the website looks on different devices](docs/images/responsivebright.PNG)
 
-### A live demo of the website can be found [here](https://lorrainescanlon.github.io/brendan-the-navigator/index.html)
+### A live demo of the website can be found [here](https://lorrainescanlon.github.io/flag-quiz/)
 
 ## UX
-This website is aimed at users who have an interest in history. It aims to appeal to users looking to know more about Irish history and martitime exploration.
+This website is aimed at children who have an interest in quizes and geography. It aims to appeal to childrens competitive side and engage them to learn in a fun way.
 
 ## User stories
 - As a user I want the purpose of the website to be clear and immediate.
-- As a user I don't want to be overwhelmed by a cluttered landing page.
-- As a user I want to easily navigate between the different pages on the site.
-- As a user I want to be presented with the content in chronological form. 
+- As a user I want the site design to be engaging and fun.
+- As a user I want to easily navigate between the different areas on the site.
 - As a user I want visuals to bring the content to life.
-- As a user I want to decide if I would like to learn more about this historical figure.
-- As a user I would like the opportunity to contact the page or provide feedback.
+- As a user I want to see my real time score throughout the game.
+- As a user I would like to see a score leaderboard.
 
 ### Strategy
-The goal is to create a well-functioning informative website. The focus is on presenting the content clearly and in a user-friendly manner. 
+The goal is to create a fun and engaging quiz. The focus is on presenting the content clearly and in a user-friendly manner. 
 
 ### Scope
-To include features that enhanced the user experience and provide value to the user. Features such as the timeline and visual images support this.
+To include features that enhanced the user experience and provide value to the user. Features such as the .....  support this.
 
 ### Structure
-The user is presented with a landing page that is not cluttered and will not overwhelm them with information initially. The landing page presents the user with a synopsis of information from which they can navigate to find further information.
+The user is presented with a landing page which details the rules of the quiz. The landing page allows the user to input a username to start the quiz.
 
 **Website Sections:**
-- **_Home / Landing Page:_** A timeline with a synopsis of the life of Brendan the Navigator.
-- **_Header:_** A header containing links to other parts of the website.
-- **_Voyage Page:_** A more detailed account of Brendan's seven year voyage.
-- **_Contact Page:_** A page featuring a feedback form and vote section.
-- **_Footer:_** A footer containing social media links.
+- **_Home / Landing Page:_** A list of the rules and an inout box for users username.
+- **_Quiz Page:_** A page that displays flags and multiple choice answers to the user.
+- **_Game Over:_** A page that displays the users final score and the top 5 quiz scores.
 
 ### Skeleton
-The website is desinged with a simple hierarchical structure which the user can navigate through with ease.
+The website is desinged with a sequential structure which the user can navigate through with ease.
 
 Wireframes were created using Balsamiq software. Frames were drafted for both mobile and larger screens.
 View the wireframe designs here ![Wireframe](docs/wireframes/brendanwireframes.pdf)
@@ -81,76 +77,54 @@ View the wireframe designs here ![Wireframe](docs/wireframes/brendanwireframes.p
 ### Surface
 A uniform design has been used throught with consistent colour schemes and font to provide a seamless user experience.
 
-A dark background colour is used to frame the elements presenting the content to the user. It mimics the color of the sea in the background and compliments the images used.
-The background of the content containers is a lighter colour with a contrasting dark font colour making it easy for users to read.
+A fun background image is used throughout to help engage the younger user. Bright contrasting colours are used within the content containers to maintain the fun theme.
 
 _Colour Palette_
 
 ![Colour Palette](docs/images/colourpalette.PNG)
 
 
-Fonts used are Lato and Fairplay Display.
+Font used are Raleway sans-serif.
 
 ## Technologies
 - HTML - To create the basic site layout and content.
-- CSS - To add style to features and content, and to add responsiveness for different device sizes.
+- CSS - To add style to features and content.
+- JavaScript - To add functionality to the website.
 - Balsamiq - Used to create the wireframes.
 
 ## Features 
 The following features are included on the website.
 ### Existing Features
-- __Navigation Bar__
-  - Featured on all three pages the navigation bar is fixed to the top of the page.
-  - The fully responsive navigation bar includes links to the Home page, Voyage and Contact page. 
-  - The color scheme used is in keeping with the website and identical on each page to allow for easy navigation.
-  - The navigation bar will allow the user to easily move from page to page across all devices without having to use the ‘back’ button.
-  - The hover effect is used to highlight the links, this helps to enhance the user experience.  
-
-![Nav Bar](docs/images/navbar.PNG)
 
 - __Home Page__
   - The landing page includes an image with text overlay to allow the user to see what this site is about. 
   - This section introduces the user to Brendan the Navigator with an image of his statue which stands at Fenit harbour in Kerry to set the scene.
   - This section includes a responsive timeline of the history of Brendan the Navigator.
 
-![Landing Page](docs/images/landingimage.PNG)
+![Home Page](docs/images/landingimage.PNG)
 
-- __Timeline__
+- __Quiz Page__
   - The timeline on the home page presents a short history of Brendan the Navigator displayed in chronological order. 
   - The timeline contains links to the Voyage page where users can read more about Brendan. 
   - It also contains links to external sites with further information that open in a new browser tab.
   - The timeline is responsive and will rearrange content for different device sizes.
 
-![Timeline](docs/images/timeline.PNG)    
+![Quiz Page](docs/images/timeline.PNG)    
 
-- __The Voyage Page__
+- __Game Over__
   - Similar to the home page, the voyage page icludes a heading image with text overlay to set the scene for the story to follow.
   - The voyage page details Brendan's famous seven year voyage.
   - Pictures are used to support the content and to paint a picture for the user. 
   - Links are provided to external sites where the user can find more information.
 
-![Voyage Page](docs/images/voyage.PNG)
+![Game Over](docs/images/timeline.PNG)    
 
-- __Contact Page__
-  - Similar to the home page the contact page uses an image of the statue of Brendan the Navigator, set as the background this image takes up the full length of the page.
-  - This page will allow the user to contact the website with any queries or feedback. 
-  - The user will be asked to submit their full name and email address.
-  - The user will also have the opportunity to vote on whether they believe Brendan reached America or not.
-
-![Contact](docs/images/form.PNG)
-
-- __The Footer__ 
-  - The footer section includes links to the relevant social media sites for Brendan the Navigator. 
-  - The links will open to a new browser tab to allow easy navigation for the user. 
-  - The footer is valuable to the user as it encourages them to keep connected via social media.
-
-![Footer](docs/images/footer.PNG)
 
 ### Future Features
-- As a future add on, a feature that would display the results of the vote button. Shown as a graphic to illustrate the percentage of users 
-  that believe Brendan reached America versus the percentage that believe he didn't.
-- An interactive map of Brendan's seven year voyage would be a great feature to support the existing content.
-- I believe on very large devices a horizontal implementation of the timeline could make better use of screen space.
+- Add in three additional rounds with flags representing Americas, Middle East & Africa and Asia & Australia.
+- Add in a bonus question to the end of each round. A true or flase question based on the region in particular.
+- Display a breakdown of scores by rounds to show users where they need to improve.
+- Add a timer to questions. Maybe reducing as the rounds grow.
 
 ## Testing
 - This page has been tested on different browsers such as Chrome, Firefox and Microsoft Edge.
@@ -169,8 +143,11 @@ The following features are included on the website.
   - No errors were found when passing through the official [Jigsaw validator](docs/images/cssvalidated.PNG)
 
 ## Bugs Encountered
-- When first deployed to GitHub, it was discovered that the social media links did not work. 
-  This was due to not enclosing the icons within the anchor closing tag.
+- While creating the javascript code to load the flag images I was running into problems with 
+  my dynamic file paths. I was using array indexes to correspond to image files. The problem was
+  that my array items were written with a leading capital letter and some contained spaces but my image files 
+  were lower case with no spaces. I used the .toLowerCase and .replace functions to overcome this.
+
 - It was also discovered that the form radio buttons did not behave as expected. 
   This was due to assigning unique names to the buttons, this was resolved by giving them both the same name.
 - Problems were encountered when applying the media query to change the layout of the timeline for larger screens. 
