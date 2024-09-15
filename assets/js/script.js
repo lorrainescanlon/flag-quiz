@@ -16,7 +16,7 @@ const scores = [{userName: "Sarah", score: 10}, {userName: "John", score: 14}, {
 var array = [];
 let score = 0;
 let flagCount = 0;
-let username = ""
+let username = "";
 
 //validate username
 function validateName(event) {
@@ -86,7 +86,7 @@ function loadQuest() {
     country1.innerText = shortArray[0];
     let country2 = document.getElementById('answer2');
     country2.innerText = shortArray[1];
-    let country3 = document.getElementById('answer3')
+    let country3 = document.getElementById('answer3');
     country3.innerText = shortArray[2];
     let country4 = document.getElementById('answer4');
     country4.innerText = shortArray[3];
@@ -99,7 +99,7 @@ function loadQuest() {
     //remove any spaces from string to match filename as detailed in the code at the link below
     //https://stackoverflow.com/questions/10800355/remove-whitespaces-inside-a-string-in-javascript
     flagIndex.replace(/\s/g, "");
-    console.log(flagIndex)
+    console.log(flagIndex);
 
     //apply flag image by setting the img src attribute to use variable flagIndex within the filename
     let flagDisplay = document.getElementById('flag');
@@ -140,7 +140,7 @@ function checkAnswer(event) {
    //set timeout before resetting button backgrounds
    setTimeout(clearAnswers, 1000);
    removeFlag();
-};
+}
 
 // Increase score
 function increaseScore() {
@@ -157,8 +157,8 @@ function clearAnswers() {
    
    let buttons = document.getElementsByClassName("answer-button");
    for (let button of buttons) {
-       button.style.backgroundColor = "white"
-    };
+       button.style.backgroundColor = "white";
+    }
 
     //If flagcount is less than 20 load another flag and answers
     if (flagCount < 20){
@@ -193,7 +193,7 @@ function gameOver(){
    console.log(scores);
    
    //sort scores array in descending order of score as described at the following link https://www.w3schools.com/jsref/jsref_sort.asp
-   scores.sort(function(a, b){return b.score-a.score});
+   scores.sort(function(a, b){return b.score-a.score;});
    console.log(scores);
 
     //Change innerhtml to display message and score. Set Play Again button to call the loadgame function.
