@@ -18,20 +18,20 @@ let score = 0;
 let flagCount = 0;
 let username = "";
 
+let usernameForm = document.getElementById('usernameInput');
+usernameForm.addEventListener('submit', validateName);
+
 //validate username
 function validateName(event) {
     event.preventDefault();
     username = usernameInput.elements['username'].value;
     console.log(username);
-    loadGame();
+    renderGamePage();
 }
-
-let usernameForm = document.getElementById('usernameInput');
-usernameForm.addEventListener('submit', validateName);
 
 
 //load game function called from the start button on index page replace game-box html code
-function loadGame() {
+function renderGamePage() {
    let gameBox = document.getElementById('game-box');
    gameBox.innerHTML = ` <div class= "game-title">
            <h1>FLAGS</h1>
@@ -53,8 +53,9 @@ function loadGame() {
            <button class = "quit-button" onclick = "location.href = 'index.html'">Quit</button>
        </div>`;
 
- //Call function to start round 1 of quiz by passing the eur array 
- array = eur.slice();     
+ //Populate array with the contents of eur array
+ array = eur.slice(); 
+ //Call function to start the quiz and pass array to it     
  shuffleArray(array);
 }
 
@@ -193,7 +194,7 @@ function gameOver(){
    scores.sort(function(a, b){return b.score-a.score;});
    console.log(scores);
 
-    //Change innerhtml to display message and score. Set Play Again button to call the loadgame function.
+    //Change innerhtml to display message and score. Set Play Again button to call the renderGamePage function.
   let gameBox = document.getElementById('game-box');
   gameBox.innerHTML = `
     <div class= "game-title"> 
@@ -233,7 +234,7 @@ function gameOver(){
     </div>
 
     <div class = "play-control">
-        <button class = "play-button" onclick = "loadGame()">Play Again</button>
+        <button class = "play-button" onclick = "renderGamePage()">Play Again</button>
     </div>`;
 
     

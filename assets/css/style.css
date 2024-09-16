@@ -31,7 +31,7 @@ body {
     padding-left: 5px;
     padding-right: 5px;
     border-style: solid;
-    border-color: black; /*#FF0000;*/
+    border-color: black;
     border-width: 1px;
     box-shadow: 0.5em 0.5em 0 0 rgba(21, 5, 105, 0.801);
 }
@@ -46,9 +46,7 @@ body {
 
 .rnd-score {
     display: flex;
-    /*align-items: center;*/
     margin: 10px 10px 10px 15px;
-    /*padding: 20px 10px 10px 0px;*/
     justify-content:space-between;
 }
 
