@@ -152,9 +152,7 @@ function increaseScore() {
 //Function to clear answer buttons and load another flag 
 function clearAnswers() {
    //reset button background colour to white
-   //the elements are returned as an array so a for let is used to reset the background style as detailed in the following post
-   //https://teamtreehouse.com/community/uncaught-typeerror-cannot-set-property-color-of-undefined-at-scriptjs22
-   
+   //the elements are returned as an array so a for let is used to reset the background style as detailed in the following post  
    let buttons = document.getElementsByClassName("answer-button");
    for (let button of buttons) {
        button.style.backgroundColor = "white";
@@ -173,7 +171,6 @@ function removeFlag() {
     let correctFlag = (document.getElementById('flag').alt);
 
     //Make first letter of correctFlagC uppercase
-    //I used the folowing resource to help write this code https://www.freecodecamp.org/news/javascript-capitalize-first-letter-of-word/
     let correctFlagC = correctFlag.charAt(0).toUpperCase()+ correctFlag.slice(1);
 
     //Find the index of correctFlagC country in array

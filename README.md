@@ -31,7 +31,6 @@ Flag Quiz is an interactive game designed for school going children. The site ai
     - [Bugs](#bugs-encountered)
   - [Deployment](#deployment)
   - [Credits](#credits)
-    - [Content](#content)
     - [media](#media)
     - [Code](#code)
     - [Acknowledgements](#acknowledgements)
@@ -39,7 +38,7 @@ Flag Quiz is an interactive game designed for school going children. The site ai
 
 
 ## Demo
-![How the website looks on different devices](docs/images/responsivebright.PNG)
+![How the website looks on different devices](docs/images/responsive.PNG)
 
 ### A live demo of the website can be found [here](https://lorrainescanlon.github.io/flag-quiz/)
 
@@ -97,27 +96,31 @@ The following features are included on the website.
 ### Existing Features
 
 - __Home Page__
-  - The landing page includes an image with text overlay to allow the user to see what this site is about. 
-  - This section introduces the user to Brendan the Navigator with an image of his statue which stands at Fenit harbour in Kerry to set the scene.
-  - This section includes a responsive timeline of the history of Brendan the Navigator.
+  - The home page includes a text heading allow the user to see what this site is about. 
+  - This section lists the game rules and contains a form where the the user is asked to enter a username of their choice.
+  - The form uses validation, the user must enter a username in order to continue.
 
-![Home Page](docs/images/landingimage.PNG)
+![Home Page](docs/images/homepage.PNG)
 
 - __Quiz Page__
-  - The timeline on the home page presents a short history of Brendan the Navigator displayed in chronological order. 
-  - The timeline contains links to the Voyage page where users can read more about Brendan. 
-  - It also contains links to external sites with further information that open in a new browser tab.
-  - The timeline is responsive and will rearrange content for different device sizes.
+  - The quiz page displays the flag and 4 answer choices to the user. 
+  - It displays a flag number counter.
+  - It also displays the users current score.
+  - When the user selects their answer, a correct answer is indicated by the answer button turning green and 
+    an incorrect answer is indicated by the button turning red.
+  - Once a choice is selected, the flag and answer choices refresh. The flag counter increases and if the user answered correctly their score also increases by 1. 
+  - The Quit button returns the user to the homepage.
 
-![Quiz Page](docs/images/timeline.PNG)    
+
+![Quiz Page](docs/images/.PNG)    
 
 - __Game Over__
-  - Similar to the home page, the voyage page icludes a heading image with text overlay to set the scene for the story to follow.
-  - The voyage page details Brendan's famous seven year voyage.
-  - Pictures are used to support the content and to paint a picture for the user. 
-  - Links are provided to external sites where the user can find more information.
+  - The game over page loads when the answer to the last flag has been selected.
+  - It display a message telling the user their final score.
+  - A table is also used to display the current top 5 scores.
+  - A play again button allows the user to restart a new game.
 
-![Game Over](docs/images/timeline.PNG)    
+![Game Over](docs/images/gameover.PNG)    
 
 
 ### Future Features
@@ -130,9 +133,7 @@ The following features are included on the website.
 - This page has been tested on different browsers such as Chrome, Firefox and Microsoft Edge.
 - This page has been tested on laptop and mobile devices.
 - Responsiveness and functionality have been tested on all screen sizes using the dev tools device toolbar.
-- All links internal and external have been tested and are working.
-- Form validation for text and email input fields has been tested successfully. 
-- The submit button posts the data to the code institute server successfully. 
+- Form validation for the username input field has been tested successfully. 
 - All pages passed lighthouse testing for performance, accessibility, best practices and search engine optimization. 
 
 ### Validator Testing 
@@ -148,17 +149,13 @@ The following features are included on the website.
   that my array items were written with a leading capital letter and some contained spaces but my image files 
   were lower case with no spaces. I used the .toLowerCase and .replace functions to overcome this.
 
-- It was also discovered that the form radio buttons did not behave as expected. 
-  This was due to assigning unique names to the buttons, this was resolved by giving them both the same name.
-- Problems were encountered when applying the media query to change the layout of the timeline for larger screens. 
-  The timeline ruler and containers were displaying correctly, but the exisiting circles for some containers were not being re organised so duplicate circles were being displayed. With some assistance from tutor support a line of code `left;auto` was added to set the items to default.
+- 
+- 
 
 
 ### Unfixed Bugs
 - When running the voyage.html code through the validator it returns the following warning.
 
-  ![HTML Validator Error](docs/images/validatorwarning.PNG)
-  No headings are needed in this section so it as been left for now.
  
 ## Deployment
 - The site was deployed to GitHub pages. The steps to deploy are as follows: 
@@ -167,32 +164,29 @@ The following features are included on the website.
   - Under the Build and Deployment section to the right find Source, select 'Deploy from a branch' from the dropdown list.
   - For Branch select 'main' from the dropdown list and click Save.
   - The link to the deployed website will now be displayed at the top of the page.
-  - The live link can be found here - https://lorrainescanlon.github.io/brendan-the-navigator/
+  - The live link can be found here - https://lorrainescanlon.github.io/flag-quiz/
 
 ## Credits 
 The following is a list of resources that were used for this website.
 
-### Content 
-- Wikipedia https://en.wikipedia.org/wiki/Brendan_the_Navigator was used as a content source.
-- Dingle-Peninsula https://dingle-peninsula.ie/stories-2/49-blog-from-the-dingle-peninsula/251-st-brendan-the-navigator-s-departure-from-brandon-creek.html was used as a content source.
-- Irish Culture and Customs https://www.irishcultureandcustoms.com/ASaints/BrendanNav.html was used as a content source.
-- Archaeology Magazine https://archaeology.org/issues/march-april-2023/letters-from/faroe-islands-settlement/ was used as a source.
-
 ### Media
-- The Statue, Brandon Creek and Monument images are my own.
-- The Sea image used is from Unsplash by Ulrike Donohue.
-- The Puffin image used is from Pixabay by Frank Liebmann.
-- The Volcano image used is from Pixabay by Julius H.
-- The Iceberg image used is from Pixabay by Lurens.
-- The compass favicon was taken from [Favicon] https://favicon.io/.com
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+- The flag images used were all taken from Pixabay by user OpenClipart-Vectors.
+- The Quiz image used was taken from Pixabay.
+- The background image used was taken from Pixabay and is by Checspec.
 
 ### Code
- - Instructions used on how to implement a timeline were found on 3Schools https://www.w3schools.com/howto/howto_css_timeline.asp 
-   This particular code creates a split timeline that then reconfigures to become a single sided timeline. The reverse approach was used for this website as it has been developed for mobile first with media queries then used to split the timeline for larger screens. As such the code from 3Schools was chopped and changed quiet a bit to get the resulting effect.
+ - I used a Fisher-Yates Sorting Algorithm to shuffle array for round 1, I found the code snippet that I based mine on at the following link.
+   https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript
+ - I found the code snippet the following link to pick a random index from shortarray.
+   https://stackoverflow.com/questions/5915096/get-a-random-item-from-a-javascript-array
+ - I used code found at the following link to remove any spaces from strings.
+   https://stackoverflow.com/questions/10800355/remove-whitespaces-inside-a-string-in-javascript
+ - I used to following resource to help write code to remove an item from an array.
+   https://sentry.io/answers/remove-specific-item-from-array/
+ - I used the following resource to create code to sort scores array objects in descending order 
+   https://www.w3schools.com/jsref/jsref_sort.asp 
 
 ### Acknowledgements
-- Inspiration for some elements came from the Code Institute's Love Running project.
 - I am gratefull to the Code Institute tutor support team for helping and guiding me in the right direction.
 - A special thanks to my mentor Medale Oluwafemi for his guidance and great advice.
 
