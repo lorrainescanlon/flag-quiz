@@ -13,7 +13,7 @@ const sea = ["Australia", "Bhutan", "Brunei", "China", "East Timor", "Fiji", "in
 
 const scores = [{userName: "Sarah", score: 10}, {userName: "John", score: 14}, {userName: "Jack", score: 8}, {userName: "Laura", score: 16}];
 
-var array = [];
+let array = [];
 let score = 0;
 let flagCount = 0;
 let username = "";
