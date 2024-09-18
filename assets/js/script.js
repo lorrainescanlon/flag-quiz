@@ -167,7 +167,7 @@ function checkAnswer(event) {
     if (myAnswer === correctAnswer) {
         myAnswerBtn.style.backgroundColor = "green";
         increaseScore();
-        removeFlag();
+        removeFlag(flagToRemove);
     } else {
        myAnswerBtn.style.backgroundColor = "red";
     }
@@ -195,17 +195,17 @@ function clearAnswers() {
     loadAnotherQ();
 }
 
-//Function to remove used flag from the array if guessed correctly in order to eliminate repetition 
-function removeFlag() {
-    let correctFlag = (document.getElementById('flag').alt);
-
-    //Make first letter of correctFlagC uppercase
-    let correctFlagC = correctFlag.charAt(0).toUpperCase()+ correctFlag.slice(1);
-
-    //Find the index of correctFlagC country in array
+/* 
+Function to remove used flag from the array if guessed correctly in order to eliminate repetition
+Flag to removed is passed from the check answer event. it is the inner text of the button clicked by the user. I used this because it is in the same form as the 
+countries in the array, first letters Uppercase with spaces. 
+*/
+function removeFlag(flagToRemove) {
+    
+    //Find the index of FlagToRemove country in array
     //I used the following resource to help write this code https://sentry.io/answers/remove-specific-item-from-array/
-    let usedFlag = array.indexOf(correctFlagC);
-
+  
+    let usedFlag = array.indexOf(flagToRemove);
     if (usedFlag > -1) {
         array.splice(usedFlag, 1);
     }
