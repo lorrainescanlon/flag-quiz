@@ -214,13 +214,13 @@ function loadAnotherQ() {
         console.log(questNum);
         gameOver();
     }
-    else if (roundNum < 4 && questNum < 5) {
+    else if (roundNum <=4 && questNum < 5) {
         console.log('loadAnotherQ condition 2');
         console.log(roundNum);
         console.log(questNum);
         shuffleArray();
     }
-    else if (roundNum < 4 && questNum >= 5) {
+    else if (roundNum <= 4 && questNum >= 5) {
         console.log('loadAnotherQ condition 3');
         console.log(roundNum);
         console.log(questNum);
