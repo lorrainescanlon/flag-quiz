@@ -17,8 +17,8 @@ let array = [];
 let score = 0;
 let flagCount = 0;
 let username = "";
-let roundNum = 1;
-let roundQuest = 1;
+let roundNum = 0;
+let questNum = 0;
 
 let usernameForm = document.getElementById('usernameInput');
 usernameForm.addEventListener('submit', validateName);
@@ -27,7 +27,6 @@ usernameForm.addEventListener('submit', validateName);
 function validateName(event) {
     event.preventDefault();
     username = usernameInput.elements['username'].value;
-    console.log(username);
     renderGamePage();
 }
 
@@ -59,31 +58,32 @@ function renderGamePage() {
            <button class = "quit-button" onclick = "location.href = 'index.html'">Quit</button>
        </div>`;
 
- //Populate array with the contents of eur array
- //array = eurFlags.slice(); 
- //Call function to start the quiz and pass array to it     
- //shuffleArray(array);
- newRound();
+    newRound();
 }
 
 //Function to select round and array to use
 function newRound() {
-    if(roundNum = 1){
+    console.log(roundNum);
+    roundNum = roundNum +1;
+    questNum = 0;
+    console.log(roundNum);
+
+    if(roundNum == 1){
         array = eurFlags.slice();
     }
-    else if(roundNum = 2){
+    else if(roundNum == 2){
         array = ameFlags.slice();
     }
-    else if(roundNum = 3){
+    else if(roundNum == 3){
         array = meaFlags.slice();
     }
-    else if(roundNum = 4){
+    else if(roundNum == 4){
         array = seaFlags.slice();
     }
     else{
         gameOver();
     }
-
+    
     shuffleArray();
 }
 
@@ -97,8 +97,8 @@ function shuffleArray() {
        let countryIndex = Math.floor(Math.random()*(i+1));
        [array[i], array[countryIndex]] = [array[countryIndex], array[i]];
    }
+
    console.log(array);
-   console.log(eurFlags);
    loadQuest();
 }
 
@@ -107,7 +107,6 @@ function shuffleArray() {
 function loadQuest() {
     let shortArray = array.slice(0, 4);
     console.log(shortArray);
-    console.log(array);
 
     //apply shortArray indexes to the buttons innertext
     let country1 = document.getElementById('answer1');
@@ -127,7 +126,6 @@ function loadQuest() {
     //remove any spaces from string to match filename as detailed in the code at the link below
     //https://stackoverflow.com/questions/10800355/remove-whitespaces-inside-a-string-in-javascript
     flagIndex.replace(/\s/g, "");
-    console.log(flagIndex);
 
     //apply flag image by setting the img src attribute to use variable flagIndex within the filename
     let flagDisplay = document.getElementById('flag');
@@ -138,8 +136,10 @@ function loadQuest() {
 
     //set flag counter
     flagCount = flagCount + 1;
-    console.log(flagCount);
     document.getElementById('rnd').innerHTML = `<h4>Flag ${(flagCount)} of 20</h4>`;
+
+    //set question counter
+    questNum = questNum +1;
 
 }
 
@@ -149,7 +149,7 @@ function checkAnswer(event) {
     //Take the users answer from the DOM button object, transform to lowercase and remove any spaces
     let myAnswer = (event.target.innerText).toLowerCase();
     myAnswer.replace(/\s/g, "");
-    console.log(myAnswer);
+
     /*
     Compare this to the alt attribute on the flag image
     If they match set the button background to green and call the increase score function
@@ -168,13 +168,12 @@ function checkAnswer(event) {
 
    //set timeout before resetting button backgrounds
    setTimeout(clearAnswers, 1000);
-   
+
 }
 
 // Increase score
 function increaseScore() {
    score = score + 1;
-   console.log(score);
    document.getElementById('score').innerHTML = `<h4>Score:${(score)}</h4>`;
 }
 
@@ -186,17 +185,9 @@ function clearAnswers() {
    for (let button of buttons) {
        button.style.backgroundColor = "white";
     }
-}
 
-//If flagcount is less than 5 load another question otherwise choose another round
-function loadAnotherQ() {
-
+    loadAnotherQ();
 }
-if (flagCount < 20){
-        shuffleArray();
-    } else {
-        gameOver();
-    }  
 
 //Function to remove used flag from the array if guessed correctly in order to eliminate repetition 
 function removeFlag() {
@@ -214,16 +205,44 @@ function removeFlag() {
     }
 }
 
+//load the next question.
+//If flagcount is less than 5 load another question otherwise choose another round
+function loadAnotherQ() {
+    if (roundNum > 4 && questNum > 5) {
+        console.log('loadAnotherQ condition 1');
+        console.log(roundNum);
+        console.log(questNum);
+        gameOver();
+    }
+    else if (roundNum < 4 && questNum < 5) {
+        console.log('loadAnotherQ condition 2');
+        console.log(roundNum);
+        console.log(questNum);
+        shuffleArray();
+    }
+    else if (roundNum < 4 && questNum >= 5) {
+        console.log('loadAnotherQ condition 3');
+        console.log(roundNum);
+        console.log(questNum);
+        newRound();
+    }
+    else {
+        console.log('loadAnotherQ condition 4');
+        console.log(roundNum);
+        console.log(questNum);
+        gameOver();
+    }
+}
+
+
 
 // Game over function to display final score and reset score and flagcount to 0.
 function gameOver(){
     //push username and score to scores array
    scores.push({userName: (username), score: (score)});
-   console.log(scores);
    
    //sort scores array in descending order of score as described at the following link https://www.w3schools.com/jsref/jsref_sort.asp
    scores.sort(function(a, b){return b.score-a.score;});
-   console.log(scores);
 
     //Change innerhtml to display message and score. Set Play Again button to call the renderGamePage function.
   let gameBox = document.getElementById('game-box');
@@ -283,6 +302,8 @@ function gameOver(){
     //reset score and flagcount variables
     score = 0; 
     flagCount = 0;
+    roundNum = 0;
+    questNum = 0;
 
 }
 
