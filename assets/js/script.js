@@ -4,8 +4,8 @@ const eurFlags = ["Andorra", "Austria", "Belgium", "Bulgaria", "Croatia", "Denma
 const ameFlags = ["America", "Argentina", "Bahamas", "Bolivia", "Brazil", "Canada", "Chile", "Colombia", "Cuba", "Dominican Republic", "Ecuador", "Greenland", "Grenada", "Guatemala", 
    "Guyana", "Haiti", "Honduras", "Jamaica", "Mexico", "Panama", "Peru", "Puerto Rico", "Saint Lucia", "Suriname", "Trinidad and Tobago", "Uruguay", "Venezuela"];
 
-const meaFlags = ["Algeria", "Azerbaijan", "Bahrain", "Democratic Republic of Congo", "Egypt", "Eritrea", "Ethiopia", "Ghana", "Iran", "Iraq", "Jordan", "Kenya", "Kuwait", "Lebanon",
-   "Lesotho", "Malawi", "Morocco", "Namibia", "Nigeria", "Oman", "Palestine", "Qatar", "Rwanda", "Saudi Arabia", "South Afria", "Sudan", "Swaziland", "Syria", "Tajikistan", "Togo",
+const meaFlags = ["Algeria", "Azerbaijan", "Bahrain", "Egypt", "Eritrea", "Ethiopia", "Ghana", "Iran", "Iraq", "Jordan", "Kenya", "Kuwait", "Lebanon",
+   "Lesotho", "Malawi", "Morocco", "Namibia", "Nigeria", "Oman", "Palestine", "Qatar", "Rwanda", "Saudi Arabia", "South Africa", "Sudan", "Swaziland", "Syria", "Tajikistan", "Togo",
    "Tunisia", "Turkey", "Uganda", "United Arab Emirates", "Uzbekistan", "Yemen", "Zambia", "Zimbabwe"];
 
 const seaFlags = ["Australia", "Bhutan", "Brunei", "China", "East Timor", "Fiji", "india", "Indonesia", "Japan", "korea", "Macau", "Malaysia", "Maldives", "Mongolia", "New Zealand",
@@ -98,7 +98,6 @@ function shuffleArray() {
        [array[i], array[countryIndex]] = [array[countryIndex], array[i]];
    }
 
-   console.log(array);
    loadQuest();
 }
 
@@ -107,6 +106,7 @@ function shuffleArray() {
 function loadQuest() {
     let shortArray = array.slice(0, 4);
     console.log(shortArray);
+    console.log(array);
 
     //apply shortArray indexes to the buttons innertext
     let country1 = document.getElementById('answer1');
@@ -122,17 +122,21 @@ function loadQuest() {
     //https://stackoverflow.com/questions/5915096/get-a-random-item-from-a-javascript-array
     //change the string toLowerCase to match image filename
     let flagIndex = (shortArray[Math.floor(Math.random()*shortArray.length)].toLowerCase());
+   
+
 
     //remove any spaces from string to match filename as detailed in the code at the link below
     //https://stackoverflow.com/questions/10800355/remove-whitespaces-inside-a-string-in-javascript
-    flagIndex.replace(/\s/g, "");
+    flagIndex = flagIndex.replace(/\s/g, '');
 
     //apply flag image by setting the img src attribute to use variable flagIndex within the filename
     let flagDisplay = document.getElementById('flag');
     flagDisplay.src="assets/images/"+(flagIndex)+".png";
+    //console.log(flagIndex);
 
     //set the img alt attribute to the flagIndex value so that this can be used later in the checkAnswer function
     flagDisplay.alt=(flagIndex);
+  
 
     //set flag counter
     flagCount = flagCount + 1;
@@ -146,17 +150,19 @@ function loadQuest() {
 //Function to check users answer
 function checkAnswer(event) {
     //Take the users answer from the DOM button object, transform to lowercase and remove any spaces
+    let flagToRemove = (event.target.innerText);
     let myAnswer = (event.target.innerText).toLowerCase();
-    myAnswer.replace(/\s/g, "");
+    myAnswer = myAnswer.replace(/\s/g, "");
 
     /*
-    Compare this to the alt attribute on the flag image
+    Compare this to the alt/id attribute on the flag image
     If they match set the button background to green and call the increase score function
     Otherwise change the background to red
     */
     let correctAnswer = document.getElementById('flag').alt;
     console.log(correctAnswer);
     console.log(myAnswer);
+    console.log(flagToRemove);
     let myAnswerBtn = event.target;
     if (myAnswer === correctAnswer) {
         myAnswerBtn.style.backgroundColor = "green";
