@@ -68,16 +68,16 @@ function newRound() {
     questNum = 0;
     console.log(roundNum);
 
-    if(roundNum == 1){
+    if(roundNum === 1){
         array = eurFlags.slice();
     }
-    else if(roundNum == 2){
+    else if(roundNum === 2){
         array = ameFlags.slice();
     }
-    else if(roundNum == 3){
+    else if(roundNum === 3){
         array = meaFlags.slice();
     }
-    else if(roundNum == 4){
+    else if(roundNum === 4){
         array = seaFlags.slice();
     }
     else{
@@ -137,7 +137,6 @@ function loadQuest() {
     //set flag counter
     flagCount = flagCount + 1;
     document.getElementById('rnd').innerHTML = `<h4>Flag ${(flagCount)} of 20</h4>`;
-
     //set question counter
     questNum = questNum +1;
 
@@ -157,6 +156,7 @@ function checkAnswer(event) {
     */
     let correctAnswer = document.getElementById('flag').alt;
     console.log(correctAnswer);
+    console.log(myAnswer);
     let myAnswerBtn = event.target;
     if (myAnswer === correctAnswer) {
         myAnswerBtn.style.backgroundColor = "green";
