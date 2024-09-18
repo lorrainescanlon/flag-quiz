@@ -9,7 +9,7 @@ const meaFlags = ["Algeria", "Azerbaijan", "Bahrain", "Egypt", "Eritrea", "Ethio
    "Tunisia", "Turkey", "Uganda", "United Arab Emirates", "Uzbekistan", "Yemen", "Zambia", "Zimbabwe"];
 
 const seaFlags = ["Australia", "Bhutan", "Brunei", "China", "East Timor", "Fiji", "india", "Indonesia", "Japan", "korea", "Macau", "Malaysia", "Maldives", "Mongolia", "New Zealand",
-   "North Korea", "Pakistan", "Papua New Guinea", "Philippines", "Samoa", "Singapore", "Soloman Islands", "Sri Lanka", "Taiwan", "Thailand", "Vietnam"];
+   "North Korea", "Pakistan", "Papua New Guinea", "Philippines", "Samoa", "Singapore", "Solomon Islands", "Sri Lanka", "Taiwan", "Thailand", "Vietnam"];
 
 const scores = [{userName: "Sarah", score: 10}, {userName: "John", score: 14}, {userName: "Jack", score: 8}, {userName: "Laura", score: 16}];
 
@@ -102,8 +102,6 @@ function shuffleArray() {
 //Function to create a new array called shortArray for each flag question with 4 items
 function loadQuest() {
     let shortArray = array.slice(0, 4);
-    console.log(shortArray);
-    console.log(shortArray[0]);
 
     //apply shortArray indexes to the buttons innertext
     let country1 = document.getElementById('answer1');
