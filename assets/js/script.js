@@ -38,11 +38,10 @@ function renderGamePage() {
            <h1>FLAGS</h1>
        </div>
        <div class = "round">
-         <p><h4>Round ${(roundNum)}</h4>
-         </p>
+           <span id="round-name"><h4>Round ${(roundNum)}</h4></span>
        </div>
-       <div class = "rnd-score">
-           <span id = "rnd"><h4>Flag ${(flagCount)} of 20</h4></span>
+       <div class = "flag-score">
+           <span id = "flag-num"><h4>Flag ${(flagCount)} of 20</h4></span>
            <span id = "score"><h4>Score: 0</h4></span>
        </div>
        <div id = "flag-container" class = "flag-image-container">
@@ -63,10 +62,8 @@ function renderGamePage() {
 
 //Function to select round and array to use
 function newRound() {
-    console.log(roundNum);
     roundNum = roundNum +1;
     questNum = 0;
-    console.log(roundNum);
 
     if(roundNum === 1){
         array = eurFlags.slice();
@@ -106,7 +103,7 @@ function shuffleArray() {
 function loadQuest() {
     let shortArray = array.slice(0, 4);
     console.log(shortArray);
-    console.log(array);
+    console.log(shortArray[0]);
 
     //apply shortArray indexes to the buttons innertext
     let country1 = document.getElementById('answer1');
@@ -123,8 +120,6 @@ function loadQuest() {
     //change the string toLowerCase to match image filename
     let flagIndex = (shortArray[Math.floor(Math.random()*shortArray.length)].toLowerCase());
    
-
-
     //remove any spaces from string to match filename as detailed in the code at the link below
     //https://stackoverflow.com/questions/10800355/remove-whitespaces-inside-a-string-in-javascript
     flagIndex = flagIndex.replace(/\s/g, '');
@@ -132,15 +127,16 @@ function loadQuest() {
     //apply flag image by setting the img src attribute to use variable flagIndex within the filename
     let flagDisplay = document.getElementById('flag');
     flagDisplay.src="assets/images/"+(flagIndex)+".png";
-    //console.log(flagIndex);
 
     //set the img alt attribute to the flagIndex value so that this can be used later in the checkAnswer function
     flagDisplay.alt=(flagIndex);
   
-
     //set flag counter
     flagCount = flagCount + 1;
-    document.getElementById('rnd').innerHTML = `<h4>Flag ${(flagCount)} of 20</h4>`;
+    document.getElementById('flag-num').innerHTML = `<h4>Flag ${(flagCount)} of 20</h4>`;
+
+    document.getElementById('round-name').innerHTML = `<h4>Round: ${(roundNum)}</h4>`;
+
     //set question counter
     questNum = questNum +1;
 
@@ -163,6 +159,7 @@ function checkAnswer(event) {
     console.log(correctAnswer);
     console.log(myAnswer);
     console.log(flagToRemove);
+    console.log(array);
     let myAnswerBtn = event.target;
     if (myAnswer === correctAnswer) {
         myAnswerBtn.style.backgroundColor = "green";
@@ -186,7 +183,8 @@ function increaseScore() {
 //Function to clear answer buttons and load another flag 
 function clearAnswers() {
    //reset button background colour to white
-   //the elements are returned as an array so a for let is used to reset the background style as detailed in the following post  
+   //the elements are returned as an array so a for let is used to reset the background style.
+
    let buttons = document.getElementsByClassName("answer-button");
    for (let button of buttons) {
        button.style.backgroundColor = "white";
@@ -215,27 +213,15 @@ function removeFlag(flagToRemove) {
 //If flagcount is less than 5 load another question otherwise choose another round
 function loadAnotherQ() {
     if (roundNum > 4 && questNum > 5) {
-        console.log('loadAnotherQ condition 1');
-        console.log(roundNum);
-        console.log(questNum);
         gameOver();
     }
     else if (roundNum <=4 && questNum < 5) {
-        console.log('loadAnotherQ condition 2');
-        console.log(roundNum);
-        console.log(questNum);
         shuffleArray();
     }
     else if (roundNum <= 4 && questNum >= 5) {
-        console.log('loadAnotherQ condition 3');
-        console.log(roundNum);
-        console.log(questNum);
         newRound();
     }
     else {
-        console.log('loadAnotherQ condition 4');
-        console.log(roundNum);
-        console.log(questNum);
         gameOver();
     }
 }
