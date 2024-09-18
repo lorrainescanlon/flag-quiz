@@ -17,6 +17,8 @@ let array = [];
 let score = 0;
 let flagCount = 0;
 let username = "";
+let roundNum = 1;
+let roundQuest = 1;
 
 let usernameForm = document.getElementById('usernameInput');
 usernameForm.addEventListener('submit', validateName);
@@ -36,6 +38,10 @@ function renderGamePage() {
    gameBox.innerHTML = ` <div class= "game-title">
            <h1>FLAGS</h1>
        </div>
+       <div class = "round">
+         <p><h4>Round ${(roundNum)}</h4>
+         </p>
+       </div>
        <div class = "rnd-score">
            <span id = "rnd"><h4>Flag ${(flagCount)} of 20</h4></span>
            <span id = "score"><h4>Score: 0</h4></span>
@@ -54,11 +60,32 @@ function renderGamePage() {
        </div>`;
 
  //Populate array with the contents of eur array
- array = eurFlags.slice(); 
+ //array = eurFlags.slice(); 
  //Call function to start the quiz and pass array to it     
- shuffleArray(array);
+ //shuffleArray(array);
+ newRound();
 }
 
+//Function to select round and array to use
+function newRound() {
+    if(roundNum = 1){
+        array = eurFlags.slice();
+    }
+    else if(roundNum = 2){
+        array = ameFlags.slice();
+    }
+    else if(roundNum = 3){
+        array = meaFlags.slice();
+    }
+    else if(roundNum = 4){
+        array = seaFlags.slice();
+    }
+    else{
+        gameOver();
+    }
+
+    shuffleArray();
+}
 
 /*
 Function to shuffle array and pass it to the loadQuest function
@@ -159,16 +186,19 @@ function clearAnswers() {
    for (let button of buttons) {
        button.style.backgroundColor = "white";
     }
+}
 
-    //If flagcount is less than 20 load another flag and answers
-    if (flagCount < 20){
+//If flagcount is less than 5 load another question otherwise choose another round
+function loadAnotherQ() {
+
+}
+if (flagCount < 20){
         shuffleArray();
     } else {
         gameOver();
-    }   
-}
+    }  
 
-//Function to remove used flag from the array in order to eliminate repetition 
+//Function to remove used flag from the array if guessed correctly in order to eliminate repetition 
 function removeFlag() {
     let correctFlag = (document.getElementById('flag').alt);
 

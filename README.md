@@ -108,7 +108,8 @@ The following features are included on the website.
   - It also displays the users current score.
   - When the user selects their answer, a correct answer is indicated by the answer button turning green and 
     an incorrect answer is indicated by the button turning red.
-  - Once a choice is selected, the flag and answer choices refresh. The flag counter increases and if the user answered correctly their score also increases by 1. 
+  - Once a choice is selected, the flag and answer choices refresh. The flag counter increases and if the user answered correctly their score also increases by 1.
+  - The flag is removed from the array if it is guessed correctly to elminate repition. 
   - The Quit button returns the user to the homepage.
 
 
