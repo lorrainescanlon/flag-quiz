@@ -37,7 +37,7 @@ function validateName(event) {
 function renderGamePage() {
    let gameBox = document.getElementById('game-box');
    gameBox.innerHTML = ` <div class= "game-title">
-           <h1>FLAGS</h1>
+           <h2>WORLD FLAGS</h2>
        </div>
        <div class = "round">
            <span id="round-name"><h4>Round ${(roundNum)} </h4></span>
