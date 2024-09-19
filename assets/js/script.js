@@ -40,7 +40,7 @@ function renderGamePage() {
            <h1>FLAGS</h1>
        </div>
        <div class = "round">
-           <span id="round-name"><h4>Round ${(roundNum)} : ${roundName}</h4></span>
+           <span id="round-name"><h4>Round ${(roundNum)} </h4></span>
        </div>
        <div class = "flag-score">
            <span id = "flag-num"><h4>Flag ${(flagCount)} of 20</h4></span>
@@ -62,11 +62,10 @@ function renderGamePage() {
     newRound();
 }
 
-//Function to select round and array to use
+//Function to select round and array to use. Set roundName depending on roundNum. 
 function newRound() {
     roundNum = roundNum +1;
     questNum = 0;
-    roundName = "";
 
     if(roundNum === 1){
         array = eurFlags.slice();
@@ -88,12 +87,11 @@ function newRound() {
         gameOver();
     }
     
-    console.log(roundName);
     shuffleArray();
 }
 
 /*
-Function to shuffle array and pass it to the loadQuest function
+Function to shuffle array and call the loadQuest function
 I used a Fisher-Yates Sorting Algorithm to shuffle array for round 1, I found the code snippet that I based mine on at the following link
 https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript
 */
@@ -106,9 +104,9 @@ function shuffleArray() {
    loadQuest();
 }
 
-
-//Function to create a new array called shortArray for each flag question with 4 items
+//Function to load a question, consisting of a flag and 4 option buttons. A round counter, a flag counter and a score counter.
 function loadQuest() {
+    //Create a new array called shortArray for each flag question with 4 items to populate buttons and flag image.
     let shortArray = array.slice(0, 4);
 
     //apply shortArray indexes to the buttons innertext
@@ -121,42 +119,40 @@ function loadQuest() {
     let country4 = document.getElementById('answer4');
     country4.innerText = shortArray[3];
 
-    //pick a random index from shortArray for the displayed flag, I found the code snippet the following link
+    //Pick a random index from shortArray for the displayed flag, I found the code snippet the following link
     //https://stackoverflow.com/questions/5915096/get-a-random-item-from-a-javascript-array
-    //change the string toLowerCase to match image filename
     flagIndex = (shortArray[Math.floor(Math.random()*shortArray.length)]);
-
+    
+    //Change the string toLowerCase to match image filename
     flagFileName = flagIndex.toLowerCase();
    
-    //remove any spaces from string to match filename as detailed in the code at the link below
+    //Remove any spaces from string to match filename as detailed in the code at the link below
     //https://stackoverflow.com/questions/10800355/remove-whitespaces-inside-a-string-in-javascript
     flagFileName = flagFileName.replace(/\s/g, '');
 
-    //apply flag image by setting the img src attribute to use variable flagIndex within the filename
+    //Apply flag image by setting the img src attribute to use variable flagIndex within the filename
     let flagToDisplay = document.getElementById('flag');
     flagToDisplay.src="assets/images/"+(flagFileName)+".png";
 
-    //set the img alt attribute to the flagIndex value
+    //Set the img alt attribute to the flagIndex value
     flagToDisplay.alt=('Flag of ' +flagIndex);
    
-    //set flag counter
+    //Set flag counter
     flagCount = flagCount + 1;
     document.getElementById('flag-num').innerHTML = `<h4>Flag ${(flagCount)} of 20</h4>`;
 
+    //Set round number and round name
     document.getElementById('round-name').innerHTML = `<h4>Round: ${(roundNum)} - ${roundName}</h4>`;
 
-    //set question counter
+    //Set question counter
     questNum = questNum +1;
 }
 
 
-//Function to check users answer
+//Function to check the users answer
 function checkAnswer(event) {
     //Take the users answer from the DOM button object
     let myAnswer = (event.target.innerText);
-
-    //
-    //let flagToRemove = (event.target.innerText);
 
     //Compare myAnswer to Correct Answer the randomly generated flagIndex of the displayed flag
     let correctAnswer = flagIndex;
@@ -164,7 +160,7 @@ function checkAnswer(event) {
     if (myAnswer === correctAnswer) {
         myAnswerBtn.style.backgroundColor = "green";
         increaseScore();
-        removeFlag(); //(flagToRemove);
+        removeFlag();
     } else {
        myAnswerBtn.style.backgroundColor = "red";
     }
@@ -174,7 +170,7 @@ function checkAnswer(event) {
 
 }
 
-// Increase score
+// Function to increase the score
 function increaseScore() {
    score = score + 1;
    document.getElementById('score').innerHTML = `<h4>Score:${(score)}</h4>`;
@@ -210,7 +206,7 @@ function removeFlag() {
 }
 
 /*
-load the next question.
+This function decides whether to load another question in the current round, start a new round or end the game.
 
 */
 function loadAnotherQ() {
@@ -232,10 +228,10 @@ function loadAnotherQ() {
 
 // Game over function to display final score and reset score and flagcount to 0.
 function gameOver(){
-    //push username and score to scores array
+    //Push username and score to scores array
    scores.push({userName: (username), score: (score)});
    
-   //sort scores array in descending order of score as described at the following link https://www.w3schools.com/jsref/jsref_sort.asp
+   //Sort scores array in descending order of score as described at the following link https://www.w3schools.com/jsref/jsref_sort.asp
    scores.sort(function(a, b){return b.score-a.score;});
 
     //Change innerhtml to display message and score. Set Play Again button to call the renderGamePage function.
@@ -282,7 +278,7 @@ function gameOver(){
     </div>`;
 
     
-    // Populate scores table with top 5 scores from scores array using do while loop
+    //Populate scores table with top 5 scores from scores array using do while loop
     let i = 0;
     do {
         let x = document.getElementById("s-table").rows[(i+1)].cells[0];
@@ -293,7 +289,7 @@ function gameOver(){
         }
     while (i<=4);
         
-    //reset score and flagcount variables
+    //Reset score and flagcount variables
     score = 0; 
     flagCount = 0;
     roundNum = 0;
