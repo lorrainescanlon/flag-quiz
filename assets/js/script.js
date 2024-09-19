@@ -8,7 +8,7 @@ const meaFlags = ["Algeria", "Azerbaijan", "Bahrain", "Egypt", "Eritrea", "Ethio
    "Lesotho", "Malawi", "Morocco", "Namibia", "Nigeria", "Oman", "Palestine", "Qatar", "Rwanda", "Saudi Arabia", "South Africa", "Sudan", "Swaziland", "Syria", "Tajikistan", "Togo",
    "Tunisia", "Turkey", "Uganda", "United Arab Emirates", "Uzbekistan", "Yemen", "Zambia", "Zimbabwe"];
 
-const seaFlags = ["Australia", "Bhutan", "Brunei", "China", "East Timor", "Fiji", "india", "Indonesia", "Japan", "korea", "Macau", "Malaysia", "Maldives", "Mongolia", "New Zealand",
+const seaFlags = ["Australia", "Bhutan", "Brunei", "China", "East Timor", "Fiji", "India", "Indonesia", "Japan", "Korea", "Macau", "Malaysia", "Maldives", "Mongolia", "New Zealand",
    "North Korea", "Pakistan", "Papua New Guinea", "Philippines", "Samoa", "Singapore", "Solomon Islands", "Sri Lanka", "Taiwan", "Thailand", "Vietnam"];
 
 const scores = [{userName: "Sarah", score: 10}, {userName: "John", score: 14}, {userName: "Jack", score: 8}, {userName: "Laura", score: 16}];
@@ -18,7 +18,9 @@ let score = 0;
 let flagCount = 0;
 let username = "";
 let roundNum = 0;
+let roundName = "";
 let questNum = 0;
+let flagIndex = "";
 
 let usernameForm = document.getElementById('usernameInput');
 usernameForm.addEventListener('submit', validateName);
@@ -67,15 +69,19 @@ function newRound() {
 
     if(roundNum === 1){
         array = eurFlags.slice();
+        roundName = 'Europe';
     }
     else if(roundNum === 2){
         array = ameFlags.slice();
+        roundName = 'Americas';
     }
     else if(roundNum === 3){
         array = meaFlags.slice();
+        roundName = 'Middle East & Africa';
     }
     else if(roundNum === 4){
         array = seaFlags.slice();
+        roundName = 'Asia & Pacific'
     }
     else{
         gameOver();
@@ -116,19 +122,21 @@ function loadQuest() {
     //pick a random index from shortArray for the displayed flag, I found the code snippet the following link
     //https://stackoverflow.com/questions/5915096/get-a-random-item-from-a-javascript-array
     //change the string toLowerCase to match image filename
-    let flagIndex = (shortArray[Math.floor(Math.random()*shortArray.length)].toLowerCase());
+    flagIndex = (shortArray[Math.floor(Math.random()*shortArray.length)]);
+
+    flagFileName = flagIndex.toLowerCase();
    
     //remove any spaces from string to match filename as detailed in the code at the link below
     //https://stackoverflow.com/questions/10800355/remove-whitespaces-inside-a-string-in-javascript
-    flagIndex = flagIndex.replace(/\s/g, '');
+    flagFileName = flagFileName.replace(/\s/g, '');
 
     //apply flag image by setting the img src attribute to use variable flagIndex within the filename
-    let flagDisplay = document.getElementById('flag');
-    flagDisplay.src="assets/images/"+(flagIndex)+".png";
+    let flagToDisplay = document.getElementById('flag');
+    flagToDisplay.src="assets/images/"+(flagFileName)+".png";
 
-    //set the img alt attribute to the flagIndex value so that this can be used later in the checkAnswer function
-    flagDisplay.alt=(flagIndex);
-  
+    //set the img alt attribute to the flagIndex value
+    flagToDisplay.alt=('Flag of ' +flagIndex);
+   
     //set flag counter
     flagCount = flagCount + 1;
     document.getElementById('flag-num').innerHTML = `<h4>Flag ${(flagCount)} of 20</h4>`;
@@ -137,7 +145,6 @@ function loadQuest() {
 
     //set question counter
     questNum = questNum +1;
-
 }
 
 
@@ -145,15 +152,16 @@ function loadQuest() {
 function checkAnswer(event) {
     //Take the users answer from the DOM button object, transform to lowercase and remove any spaces
     let flagToRemove = (event.target.innerText);
-    let myAnswer = (event.target.innerText).toLowerCase();
-    myAnswer = myAnswer.replace(/\s/g, "");
+    let myAnswer = (event.target.innerText);
+    //myAnswer = myAnswer.replace(/\s/g, "");
 
     /*
     Compare this to the alt/id attribute on the flag image
     If they match set the button background to green and call the increase score function
     Otherwise change the background to red
     */
-    let correctAnswer = document.getElementById('flag').alt;
+    let correctAnswer = flagIndex;
+    //document.getElementById('flag').alt;
     console.log(correctAnswer);
     console.log(myAnswer);
     console.log(flagToRemove);
