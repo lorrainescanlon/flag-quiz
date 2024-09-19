@@ -66,6 +66,7 @@ function renderGamePage() {
 function newRound() {
     roundNum = roundNum +1;
     questNum = 0;
+    roundName="";
 
     if(roundNum === 1){
         array = eurFlags.slice();
@@ -196,12 +197,12 @@ Function to remove used flag from the array if guessed correctly in order to eli
 Flag to removed is passed from the check answer event. it is the inner text of the button clicked by the user. I used this because it is in the same form as the 
 countries in the array, first letters Uppercase with spaces. 
 */
-function removeFlag() {//(flagToRemove) {
+function removeFlag() { 
     
     //Find the index of FlagToRemove country in array
     //I used the following resource to help write this code https://sentry.io/answers/remove-specific-item-from-array/
-  
-    let usedFlag = array.indexOf(flagIndex)//(flagToRemove);
+    let flagToRemove = flagIndex;
+    let usedFlag = array.indexOf(flagToRemove);
     if (usedFlag > -1) {
         array.splice(usedFlag, 1);
     }
