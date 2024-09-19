@@ -40,7 +40,7 @@ function renderGamePage() {
            <h1>FLAGS</h1>
        </div>
        <div class = "round">
-           <span id="round-name"><h4>Round ${(roundNum)}</h4><h4>${(roundName)}</h4></span>
+           <span id="round-name"><h4>Round ${(roundNum)} : ${roundName}</h4></span>
        </div>
        <div class = "flag-score">
            <span id = "flag-num"><h4>Flag ${(flagCount)} of 20</h4></span>
@@ -66,28 +66,29 @@ function renderGamePage() {
 function newRound() {
     roundNum = roundNum +1;
     questNum = 0;
-    roundName="";
+    roundName = "";
 
     if(roundNum === 1){
         array = eurFlags.slice();
-        roundName = Europe;
+        roundName = "Europe";
     }
     else if(roundNum === 2){
         array = ameFlags.slice();
-        roundName = 'Americas';
+        roundName = "Americas";
     }
     else if(roundNum === 3){
         array = meaFlags.slice();
-        roundName = 'Middle East & Africa';
+        roundName = "Middle-East & Africa";
     }
     else if(roundNum === 4){
         array = seaFlags.slice();
-        roundName = 'Asia & Pacific'
+        roundName = "Asia & Pacific";
     }
     else{
         gameOver();
     }
     
+    console.log(roundName);
     shuffleArray();
 }
 
@@ -142,7 +143,7 @@ function loadQuest() {
     flagCount = flagCount + 1;
     document.getElementById('flag-num').innerHTML = `<h4>Flag ${(flagCount)} of 20</h4>`;
 
-    document.getElementById('round-name').innerHTML = `<h4>Round: ${(roundNum)}</h4>`;
+    document.getElementById('round-name').innerHTML = `<h4>Round: ${(roundNum)} - ${roundName}</h4>`;
 
     //set question counter
     questNum = questNum +1;
@@ -208,8 +209,10 @@ function removeFlag() {
     }
 }
 
-//load the next question.
-//If flagcount is less than 5 load another question otherwise choose another round
+/*
+load the next question.
+
+*/
 function loadAnotherQ() {
     if (roundNum > 4 && questNum > 5) {
         gameOver();
