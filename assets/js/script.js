@@ -40,7 +40,7 @@ function renderGamePage() {
            <h1>FLAGS</h1>
        </div>
        <div class = "round">
-           <span id="round-name"><h4>Round ${(roundNum)}</h4></span>
+           <span id="round-name"><h4>Round ${(roundNum)}</h4><h4>${(roundName)}</h4></span>
        </div>
        <div class = "flag-score">
            <span id = "flag-num"><h4>Flag ${(flagCount)} of 20</h4></span>
@@ -69,7 +69,7 @@ function newRound() {
 
     if(roundNum === 1){
         array = eurFlags.slice();
-        roundName = 'Europe';
+        roundName = Europe;
     }
     else if(roundNum === 2){
         array = ameFlags.slice();
@@ -150,27 +150,19 @@ function loadQuest() {
 
 //Function to check users answer
 function checkAnswer(event) {
-    //Take the users answer from the DOM button object, transform to lowercase and remove any spaces
-    let flagToRemove = (event.target.innerText);
+    //Take the users answer from the DOM button object
     let myAnswer = (event.target.innerText);
-    //myAnswer = myAnswer.replace(/\s/g, "");
 
-    /*
-    Compare this to the alt/id attribute on the flag image
-    If they match set the button background to green and call the increase score function
-    Otherwise change the background to red
-    */
+    //
+    //let flagToRemove = (event.target.innerText);
+
+    //Compare myAnswer to Correct Answer the randomly generated flagIndex of the displayed flag
     let correctAnswer = flagIndex;
-    //document.getElementById('flag').alt;
-    console.log(correctAnswer);
-    console.log(myAnswer);
-    console.log(flagToRemove);
-    console.log(array);
     let myAnswerBtn = event.target;
     if (myAnswer === correctAnswer) {
         myAnswerBtn.style.backgroundColor = "green";
         increaseScore();
-        removeFlag(flagToRemove);
+        removeFlag(); //(flagToRemove);
     } else {
        myAnswerBtn.style.backgroundColor = "red";
     }
@@ -204,12 +196,12 @@ Function to remove used flag from the array if guessed correctly in order to eli
 Flag to removed is passed from the check answer event. it is the inner text of the button clicked by the user. I used this because it is in the same form as the 
 countries in the array, first letters Uppercase with spaces. 
 */
-function removeFlag(flagToRemove) {
+function removeFlag() {//(flagToRemove) {
     
     //Find the index of FlagToRemove country in array
     //I used the following resource to help write this code https://sentry.io/answers/remove-specific-item-from-array/
   
-    let usedFlag = array.indexOf(flagToRemove);
+    let usedFlag = array.indexOf(flagIndex)//(flagToRemove);
     if (usedFlag > -1) {
         array.splice(usedFlag, 1);
     }
