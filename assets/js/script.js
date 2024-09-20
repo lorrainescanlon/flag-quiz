@@ -28,7 +28,8 @@ usernameForm.addEventListener('submit', validateName);
 //validate username
 function validateName(event) {
     event.preventDefault();
-    username = usernameInput.elements['username'].value;
+    username = usernameForm.elements.username.value;
+    //username = usernameInput.elements.username.value;
     renderGamePage();
 }
 
@@ -108,6 +109,7 @@ function shuffleArray() {
 function loadQuest() {
     //Create a new array called shortArray for each flag question with 4 items to populate buttons and flag image.
     let shortArray = array.slice(0, 4);
+    let flagFileName = "";
 
     //apply shortArray indexes to the buttons innertext
     let country1 = document.getElementById('answer1');
