@@ -207,3 +207,20 @@ body {
 
     
 }
+
+/*Media query: tablets and larger (768px and up)*/
+@media screen and (min-width: 768px) {
+    .game-area {
+        max-width: 400px;
+    }
+
+    .flag-image-container {
+        width: 350px;
+        height: 200px;
+    }
+
+    .flag-image {
+        width: 330px;
+        height: 200px;
+    }
+}
