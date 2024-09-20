@@ -176,7 +176,7 @@ function checkAnswer(event) {
 
    //set timeout before resetting button backgrounds
    setTimeout(clearAnswers, 1000);
-
+   event.target.blur();
 }
 
 // Function to increase the score
