@@ -23,18 +23,18 @@ let questNum = 0;
 let flagIndex = "";
 
 let usernameForm = document.getElementById('usernameInput');
+
+//Event listener to call function validateName once Play button is clicked.
 usernameForm.addEventListener('submit', validateName);
 
-//validate username
+//Function to assign username to a variable and call the renderGamePage function.
 function validateName(event) {
     event.preventDefault();
     username = usernameForm.elements.username.value;
-    //username = usernameInput.elements.username.value;
     renderGamePage();
 }
 
-
-//load game function called from the start button on index page replace game-box html code
+//Function called from validateName to load the game-box html code containing the flag, the answers, score and round details. It calls the newRound function.
 function renderGamePage() {
    let gameBox = document.getElementById('game-box');
    gameBox.innerHTML = ` <div class= "game-title">
@@ -63,13 +63,19 @@ function renderGamePage() {
     newRound();
 }
 
-//Function to select round and array to use. Set roundName depending on roundNum. 
+/*
+Function to select round to play and array to use. If round number is equal to 1 then set array to a copy of Europe array.
+If round number is 2 then set array to a copy of Americas array. If round number is 3 then set array to a copy of Middle-East & Africa array.
+If round number is 4 then set array to a copy of Asia & Pacific array. Set roundName accordingly. Call shuffleArray function.
+*/
 function newRound() {
     roundNum = roundNum +1;
     questNum = 0;
 
     if(roundNum === 1){
+        //Use .slice to create a copy of eurFlags array.
         array = eurFlags.slice();
+        //Set roundName variable to match array description 
         roundName = "Europe";
     }
     else if(roundNum === 2){
@@ -88,6 +94,7 @@ function newRound() {
         gameOver();
     }
     
+    //Call shuffleArray function.
     shuffleArray();
 }
 
@@ -105,7 +112,7 @@ function shuffleArray() {
    loadQuest();
 }
 
-//Function to load a question, consisting of a flag and 4 option buttons. A round counter, a flag counter and a score counter.
+//Function to populate flag question components, consisting of a flag image and 4 option buttons. A round counter value and round name, a flag counter value and a score counter value.
 function loadQuest() {
     //Create a new array called shortArray for each flag question with 4 items to populate buttons and flag image.
     let shortArray = array.slice(0, 4);
@@ -151,7 +158,7 @@ function loadQuest() {
 }
 
 
-//Function to check the users answer
+//Function to check the users answer and set the button background colour accordingly. Call increaseScore and removeFlag functions if the users answer is correct.
 function checkAnswer(event) {
     //Take the users answer from the DOM button object
     let myAnswer = (event.target.innerText);
@@ -180,8 +187,7 @@ function increaseScore() {
 
 //Function to clear answer buttons and load another flag 
 function clearAnswers() {
-   //reset button background colour to white
-   //the elements are returned as an array so a for let is used to reset the background style.
+   //the elements are returned as an array so a for let is used to reset the background style to white.
 
    let buttons = document.getElementsByClassName("answer-button");
    for (let button of buttons) {
@@ -192,13 +198,11 @@ function clearAnswers() {
 }
 
 /* 
-Function to remove used flag from the array if guessed correctly in order to eliminate repetition
-Flag to removed is passed from the check answer event. it is the inner text of the button clicked by the user. I used this because it is in the same form as the 
-countries in the array, first letters Uppercase with spaces. 
+Function to remove used flag from the array if guessed correctly in order to eliminate repetition 
 */
 function removeFlag() { 
     
-    //Find the index of FlagToRemove country in array
+    //Find the index of FlagToRemove country in array, splice at this index removing one item.
     //I used the following resource to help write this code https://sentry.io/answers/remove-specific-item-from-array/
     let flagToRemove = flagIndex;
     let usedFlag = array.indexOf(flagToRemove);
@@ -209,7 +213,9 @@ function removeFlag() {
 
 /*
 This function decides whether to load another question in the current round, start a new round or end the game.
-
+If the round number is greater than 4 and the question number is greater than 5 then call the gameOver function.
+If the round number is less than or equal to 4 and the question number is less than 5 then call the shuffleArray function, to load a new question for that round.
+If the round number is less than or equal to 4 and the question number is greater or equal than 5 then call the newRound function to load a new round.
 */
 function loadAnotherQ() {
     if (roundNum > 4 && questNum > 5) {
@@ -228,7 +234,7 @@ function loadAnotherQ() {
 
 
 
-// Game over function to display final score and reset score and flagcount to 0.
+// Game over function to display final score, reset score and flagcount to 0.
 function gameOver(){
     //Push username and score to scores array
    scores.push({userName: (username), score: (score)});
