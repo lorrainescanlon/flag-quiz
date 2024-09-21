@@ -112,6 +112,10 @@ body {
     transform: scale(1.02);
 }
 
+.answer-button {
+    font-size: 100%;
+    transform: scale(1);
+}
 .play-control {
     display: flex;
     flex-direction: column;
