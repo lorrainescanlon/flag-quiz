@@ -107,15 +107,16 @@ body {
     font-size: 100%;
 }
 
-.answer-button:hover {
+/*.answer-button:hover {
+    font-size: 150%;
+    transform: scale(1.02);
+}*/
+
+.answer-button:active {
     font-size: 150%;
     transform: scale(1.02);
 }
 
-/*.answer-button {
-    font-size: 100%;
-    transform: scale(1);
-}*/
 .play-control {
     display: flex;
     flex-direction: column;
@@ -220,9 +221,10 @@ body {
 
 
 /*Media query for touch screen devices*/
+/*
 @media (hover: none) and (pointer: coarse) {
-    .answer-button:hover {
-        /*font-size: 150%;*/
+    .answer-button:active {
+        font-size: 150%;
         transform: scale(1.02);
     }
 }
@@ -264,4 +266,13 @@ body {
     max-width: 360px;
     }
     
+}
+
+/*Media Query: larger devices (1024px and up) */
+@media screen and (min-width: 1024px){
+    .answer-button:hover {
+        font-size: 150%;
+        transform: scale(1.02);
+    }  
+
 }
