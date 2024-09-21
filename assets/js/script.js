@@ -175,9 +175,9 @@ function checkAnswer(event) {
     }
 
    //set timeout before resetting button backgrounds
-   setTimeout(clearAnswers, 1000);
-   //event.currentTarget.blur();
-   //checkAnswer.currentTarget.blur();
+   setTimeout(clearAnswers, 1100);
+   
+   
 }
 
 // Function to increase the score
@@ -189,12 +189,11 @@ function increaseScore() {
 //Function to clear answer buttons and load another flag 
 function clearAnswers() {
    //the elements are returned as an array so a for let is used to reset the background style to white.
-
    let buttons = document.getElementsByClassName("answer-button");
    for (let button of buttons) {
        button.style.backgroundColor = "white";
     }
-
+    
     loadAnotherQ();
 }
 

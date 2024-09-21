@@ -18,6 +18,10 @@ body {
     background: url(../images/backgrschblue.jpg) no-repeat center top/cover;
 }
 
+h4 {
+    font-weight: 600;
+}
+
 .game-area {
    /* background: url(../images/backgold.jpg) no-repeat center top/cover;*/
     background-color: rgba(255, 217, 0, 0.945);
@@ -104,24 +108,18 @@ body {
     height: 50px;
     border-radius: 10px;
     margin: 3px 10px;
-    font-size: 100%;
+    font-size: 120%;
+    font-weight: normal;
 }
 
-/*.answer-button:hover {
-    font-size: 150%;
-    transform: scale(1.02);
-}*/
 
 .answer-button:active {
-    font-size: 150%;
-    transform: scale(1.02);
-    box-shadow: 2px 2px 0 0 rgba(10, 1, 54, 0.5);
+    transform: scale(1.05);
+    box-shadow: 3px 3px 3px 3px rgba(10, 1, 54, 0.4);
+    font-size: 130%;
 }
 
-/*.answer-button:focus {
-    font-size: 150%;
-    transform: scale(1.02);
-}*/
+
 
 .play-control {
     display: flex;
@@ -142,7 +140,7 @@ body {
     text-shadow: 0 0 10px black;
 }
 .play-button:hover {
-    box-shadow: 4px 4px 0 0 rgba(10, 1, 54, 0.5);
+    box-shadow: 3px 3px 1px 1px rgba(10, 1, 54, 0.5);
     font-weight: bold;
 }
 
@@ -223,16 +221,6 @@ body {
    border: 1px groove rgba(10, 1, 54, 0.501);
 
     
-}
-
-
-/*Media query for touch screen devices*/
-/*
-@media (hover: none) and (pointer: coarse) {
-    .answer-button:active {
-        font-size: 150%;
-        transform: scale(1.02);
-    }
 }
 
 /*Media query: tablets and larger (768px and up)*/
