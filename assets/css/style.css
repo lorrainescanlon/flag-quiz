@@ -62,22 +62,29 @@ h4 {
     background-color: lightblue;
 }
 
-.flag-score {
+.score {
     display: flex;
     margin: 0px 10px 10px 0px;
     justify-content:space-between;
 }
 
+/*.round-score {
+    display: flex;
+    flex-direction: row;
+}*/
+
 .rules-image-container {
     display: flex;
-    align-items: center;
+    /*align-items: center;*/
+    align-content: center;
+    justify-content: center;
 }
 
 .rules-image {
     height: 150px;
     max-width: 310px;
-    object-fit: contain;
-    object-position: center;
+    /*object-fit: contain;
+    object-position: center;*/
 }
 
 .flag-image-container {
@@ -242,20 +249,17 @@ h4 {
     .flag-image {
         width: 360px;
         height: 225px;
-        /*margin: 3px 10px;*/
         margin-right: 10px;
     }
 
     .rules-image {
         max-width: 400px;
-        margin-left: 30px;
     } 
 
     .rules-image-container {
       max-width: 400px;
       
     }
-
     .answer-button {
     max-width: 360px;
     }
@@ -265,9 +269,74 @@ h4 {
 /*Media Query: larger devices (1024px and up) */
 @media screen and (min-width: 1024px){
     .answer-button:hover {
-        font-size: 150%;
-        transform: scale(1.02);
-        box-shadow: 2px 2px 0 0 rgba(10, 1, 54, 0.5);
+        transform: scale(1.05);
+        box-shadow: 3px 3px 3px 3px rgba(10, 1, 54, 0.4);
+        font-size: 130%;
     }  
+
+    .game-area {
+        display: flex;
+        flex-direction: column;
+        max-width: 800px;
+        align-self: center;
+    }
+    .round {
+        display: flex;
+        justify-content:space-around;
+    }
+
+    .image-answer-container {
+        max-width: 800px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .answer-button {
+        width: 360px;
+    }
+    
+    .flag-image-container {
+        padding-top: 20px;
+    }
+
+    .rules-image-container {
+        max-width: 600px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+
+}
+
+/*Media Query: larger devices (1400px and up) */
+@media screen and (min-width: 1400px){
+    .game-area {
+        display: flex;
+        flex-direction: column;
+        max-width: 800px;
+        align-self: center;
+    }
+
+    .image-answer-container {
+        max-width: 800px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .answer-button {
+        width: 360px;
+    }
+    
+    .flag-image-container {
+        padding-top: 20px;
+    }
+
+    .rules-image-container {
+        max-width: 600px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+
 
 }

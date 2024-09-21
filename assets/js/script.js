@@ -37,25 +37,30 @@ function validateName(event) {
 //Function called from validateName to load the game-box html code containing the flag, the answers, score and round details. It calls the newRound function.
 function renderGamePage() {
    let gameBox = document.getElementById('game-box');
-   gameBox.innerHTML = ` <div class= "game-title">
+   gameBox.innerHTML = ` 
+       <div class= "game-title">
            <h2>WORLD FLAGS</h2>
        </div>
-       <div class = "round">
-           <span id="round-name"><h4>Round ${(roundNum)} </h4></span>
+       <div class = "round-score">
+            <div class = "round">
+                <span id="round-name"><h4>Round ${(roundNum)} </h4></span>
+            </div>
+            <div class = "score">
+                <span id = "flag-num"><h4>Flag ${(flagCount)} of 20</h4></span>
+                <span id = "score"><h4>Score: 0</h4></span>
+            </div>
        </div>
-       <div class = "flag-score">
-           <span id = "flag-num"><h4>Flag ${(flagCount)} of 20</h4></span>
-           <span id = "score"><h4>Score: 0</h4></span>
-       </div>
-       <div id = "flag-container" class = "flag-image-container">
-           <img class="flag-image" id = "flag" src="assets/images/ireland.png">
-       </div>
-       <div class = "flag-answers">
-           <button class = "answer-button" onclick = "checkAnswer(event)" id ="answer1"><h3>Country1</h3></button>
-           <button class = "answer-button" onclick = "checkAnswer(event)" id = "answer2"><h3>Country 2</h3></button>
-           <button class = "answer-button" onclick = "checkAnswer(event)" id = "answer3"><h3>Country 3</h3></button>
-           <button class = "answer-button" onclick = "checkAnswer(event)" id = "answer4"><h3>Country 4</h3></button>
-       </div>
+       <div class = "image-answer-container">
+            <div id = "flag-container" class = "flag-image-container">
+                <img class="flag-image" id = "flag" src="assets/images/ireland.png">
+            </div>
+            <div class = "flag-answers">
+                <button class = "answer-button" onclick = "checkAnswer(event)" id ="answer1"><h3>Country1</h3></button>
+                <button class = "answer-button" onclick = "checkAnswer(event)" id = "answer2"><h3>Country 2</h3></button>
+                <button class = "answer-button" onclick = "checkAnswer(event)" id = "answer3"><h3>Country 3</h3></button>
+                <button class = "answer-button" onclick = "checkAnswer(event)" id = "answer4"><h3>Country 4</h3></button>
+            </div>
+        </div>
        <div class = "quit-control">
            <button class = "quit-button" onclick = "location.href = 'index.html'">Quit</button>
        </div>`;
