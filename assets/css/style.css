@@ -215,12 +215,27 @@ body {
     }
 
     .flag-image-container {
-        width: 350px;
-        height: 200px;
+        width: 400px;
+        height: 225px;
     }
 
     .flag-image {
-        width: 330px;
-        height: 200px;
+        width: 360px;
+        height: 225px;
     }
+
+    .rules-image {
+        max-width: 400px;
+        margin-left: 30px;
+    } 
+
+    .rules-image-container {
+      max-width: 400px;
+      
+    }
+
+    .answer-button {
+    max-width: 360px;
+    }
+    
 }
