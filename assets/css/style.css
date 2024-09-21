@@ -112,7 +112,12 @@ body {
     transform: scale(1.02);
 }*/
 
-.answer-button:active {
+/*.answer-button:active {
+    font-size: 150%;
+    transform: scale(1.02);
+}*/
+
+.answer-button:focus {
     font-size: 150%;
     transform: scale(1.02);
 }
