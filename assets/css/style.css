@@ -25,15 +25,17 @@ body {
     flex-direction: column;
     max-width: 320px;
     align-self: center;
-    margin-top: 45px;
-    padding-top: 20px;
+    margin-top: 20px;
+    /*margin-top: 45px;*/
+    /*padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 5px;
-    padding-right: 5px;
+    padding-right: 5px;*/
+    padding: 5px;
     border-style: solid;
     border-color: black;
     border-width: 1px;
-    box-shadow: 0.5em 0.5em 0 0 rgba(21, 5, 105, 0.801);
+    box-shadow: 0.8em 0.8em 0 0 rgba(21, 5, 105, 0.5);
 }
 
 .game-title h2 {
@@ -125,7 +127,7 @@ body {
     text-shadow: 0 0 10px black;
 }
 .play-button:hover {
-    box-shadow: 0.3em 0.3em 0 0 rgba(10, 1, 54, 0.801);
+    box-shadow: 0.3em 0.3em 0 0 rgba(10, 1, 54, 0.5);
     font-weight: bold;
 }
 
@@ -169,13 +171,13 @@ body {
     width: 75px;
     border: 2px solid grey;
     border-radius: 50%;
-    background-color: rgba(247, 7, 7, 0.856);
+    background-color: rgb(247, 7, 7);
     text-shadow: 0 0 10px black;
     
 }
 
 .quit-button:hover {
-    box-shadow: 0.3em 0.3em 0 0 rgba(10, 1, 54, 0.801);
+    box-shadow: 0.3em 0.3em 0 0 rgba(10, 1, 54, 0.5);
     font-weight: bold;
 
 }
@@ -212,6 +214,11 @@ body {
 @media screen and (min-width: 768px) {
     .game-area {
         max-width: 400px;
+        /*margin-top: 45px;*/
+        /*padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 5px;
+        padding-right: 5px;*/
     }
 
     .flag-image-container {
@@ -222,6 +229,8 @@ body {
     .flag-image {
         width: 360px;
         height: 225px;
+        /*margin: 3px 10px;*/
+        margin-right: 10px;
     }
 
     .rules-image {
