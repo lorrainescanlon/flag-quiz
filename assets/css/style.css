@@ -54,6 +54,10 @@ body {
     padding: 5px;
 }
 
+.usernameBox:focus {
+    background-color: lightblue;
+}
+
 .flag-score {
     display: flex;
     margin: 0px 10px 10px 0px;
@@ -214,11 +218,11 @@ body {
 @media screen and (min-width: 768px) {
     .game-area {
         max-width: 400px;
-        /*margin-top: 45px;*/
-        /*padding-top: 20px;
+        margin-top: 45px;
+        padding-top: 20px;
         padding-bottom: 20px;
         padding-left: 5px;
-        padding-right: 5px;*/
+        padding-right: 5px;
     }
 
     .flag-image-container {
