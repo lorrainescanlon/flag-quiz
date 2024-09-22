@@ -172,13 +172,13 @@ function checkAnswer(event) {
     let correctAnswer = flagIndex;
     let myAnswerBtn = event.target;
     if (myAnswer === correctAnswer) {
-        myAnswerBtn.style.backgroundColor = "green";
+        myAnswerBtn.style.backgroundColor = "rgb(6, 240, 45)"; //"green";
         increaseScore();
         removeFlag();
     } else {
-       myAnswerBtn.style.backgroundColor = "red";
+       myAnswerBtn.style.backgroundColor = "rgb(255, 49, 49)";
     }
-
+  
    //set timeout before resetting button backgrounds
    setTimeout(clearAnswers, 1100);
    
@@ -255,10 +255,10 @@ function gameOver(){
     </div>
 
     <div class = "score-board-container">
-        <h2>Well done</h2>
+        <h2>Well Done</h2>
         <h2>${username}!</h2>
-        <h2>You scored ${score}</h2>
-        <table id = "s-table" class = "scores-table">
+        <h2>You Scored ${score}</h2>
+        <table id = "s-table" class = "scores-table" aria-label = "leaderboard of top 5 scorers">
             <tbody>
                 <th>Username</th>
                 <th>Score</th>
