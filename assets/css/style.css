@@ -15,6 +15,8 @@ body {
     font-family: "Raleway", sans-serif;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-items: center;
     background: url(../images/backgrschblue.jpg) no-repeat center top/cover;
 }
 
@@ -28,6 +30,7 @@ h4 {
     flex-direction: column;
     max-width: 320px;
     align-self: center;
+    justify-self: center;
     margin-top: 20px;
     padding: 5px;
     border-style: solid;
@@ -335,7 +338,7 @@ h4 {
 
 /*Media Query: larger devices (1400px and up) */
 @media screen and (min-width: 1400px){
-    
+
     .game-area {
         display: flex;
         flex-direction: column;
