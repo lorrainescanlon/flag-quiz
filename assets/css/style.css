@@ -232,36 +232,56 @@ h4 {
 
 /*Media query: tablets and larger (768px and up)*/
 @media screen and (min-width: 768px) {
+
+    body {
+        align-items: center;
+        justify-items: center;
+    }
+
     .game-area {
-        max-width: 400px;
-        margin-top: 45px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        padding-left: 5px;
-        padding-right: 5px;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        /*align-items: center;*/
+        justify-items: center;
+        padding: 10px;
+        
     }
 
-    .flag-image-container {
-        width: 400px;
-        height: 225px;
-    }
-
-    .flag-image {
-        width: 360px;
-        height: 225px;
-        margin-right: 10px;
+    .rules-image-container {
+        max-width: 100%;
+        
     }
 
     .rules-image {
-        max-width: 400px;
-    } 
+        height: 150px;
+        max-width: 100%;
 
-    .rules-image-container {
-      max-width: 400px;
-      
     }
+
+   
+    .image-answer-container {
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .flag-image-container {
+        width: 480px;
+        height: 250px;
+    }
+    .flag-image {
+        width: 90%;
+        height: 100%;
+        margin-right: 0;
+    }
+
+    .flag-answers {
+        padding-top: 20px;
+        margin-left: 20px;
+    }
+
     .answer-button {
-    max-width: 360px;
+     max-width: 90%;
     }
     
 }
