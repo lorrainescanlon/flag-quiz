@@ -165,8 +165,10 @@ function loadQuest() {
 
 //Function to check the users answer and set the button background colour accordingly. Call increaseScore and removeFlag functions if the users answer is correct.
 function checkAnswer(event) {
-    //Take the users answer from the DOM button object
+    //Disable button to prevent users clicking more than one button
     disableButtons();
+    
+    //Get answer from DOM button
     let myAnswer = (event.target.innerText);
 
     //Compare myAnswer to Correct Answer the randomly generated flagIndex of the displayed flag
@@ -269,13 +271,16 @@ function gameOver(){
   let gameBox = document.getElementById('game-box');
   gameBox.innerHTML = `
     <div class= "game-title"> 
-        <h1>Game Over</h1><br><br>
+        <h1>Game<br>Over</h1><br><br>
     </div>
-
+    <div>
+        <img class="trophy-image" id = "trophy" src="assets/images/trophysm.png">
+    </div>
+    <div class = "game-title">
+        <h3>Well Done ${username}!<br>You Scored ${score}</h3>
+    </div>
     <div class = "score-board-container">
-        <h2>Well Done</h2>
-        <h2>${username}!</h2>
-        <h2>You Scored ${score}</h2>
+
         <table id = "s-table" class = "scores-table" aria-label = "leaderboard of top 5 scorers">
             <tbody>
                 <th>Username</th>
