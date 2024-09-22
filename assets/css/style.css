@@ -123,6 +123,11 @@ h4 {
     box-shadow: 3px 3px 3px 3px rgba(10, 1, 54, 0.4);
     font-size: 130%;
 }
+/*.answer-button:disabled {
+    background-color: white;
+    color: grey;
+    border-color: grey;
+}*/
 
 .play-control {
     display: flex;
