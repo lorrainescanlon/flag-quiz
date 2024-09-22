@@ -270,17 +270,11 @@ function gameOver(){
     //Change innerhtml to display message and score. Set Play Again button to call the renderGamePage function.
   let gameBox = document.getElementById('game-box');
   gameBox.innerHTML = `
-    <div class= "game-title"> 
+    <div id="game-over" class= "game-title"> 
         <h1>Game<br>Over</h1><br><br>
-    </div>
-    <div>
-        <img class="trophy-image" id = "trophy" src="assets/images/trophysm.png">
-    </div>
-    <div class = "game-title">
         <h3>Well Done ${username}!<br>You Scored ${score}</h3>
     </div>
     <div class = "score-board-container">
-
         <table id = "s-table" class = "scores-table" aria-label = "leaderboard of top 5 scorers">
             <tbody>
                 <th>Username</th>
