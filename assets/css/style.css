@@ -23,18 +23,12 @@ h4 {
 }
 
 .game-area {
-   /* background: url(../images/backgold.jpg) no-repeat center top/cover;*/
     background-color: rgba(255, 217, 0, 0.945);
     display: flex;
     flex-direction: column;
     max-width: 320px;
     align-self: center;
     margin-top: 20px;
-    /*margin-top: 45px;*/
-    /*padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 5px;
-    padding-right: 5px;*/
     padding: 5px;
     border-style: solid;
     border-color: black;
@@ -58,8 +52,9 @@ h4 {
     padding-top: 5px;
 }
 
+/* Add effects to change the background color of the text input box when in use. */ 
 .usernameBox:focus {
-    background-color: lightblue;
+    background-color: rgb(146, 240, 6);
 }
 
 .score {
@@ -68,14 +63,8 @@ h4 {
     justify-content:space-between;
 }
 
-/*.round-score {
-    display: flex;
-    flex-direction: row;
-}*/
-
 .rules-image-container {
     display: flex;
-    /*align-items: center;*/
     align-content: center;
     justify-content: center;
 }
@@ -83,8 +72,6 @@ h4 {
 .rules-image {
     height: 150px;
     max-width: 310px;
-    /*object-fit: contain;
-    object-position: center;*/
 }
 
 .flag-image-container {
@@ -101,6 +88,7 @@ h4 {
     border: solid 1px black;
 }
 
+/* Add hover effects to the flag images, make the images grow in size when the hovered over. */
 .flag-image:hover {
     transform: scale(1.2);
 }
@@ -119,14 +107,12 @@ h4 {
     font-weight: normal;
 }
 
-
+/* Add active effects to buttons for touch screen devices. */
 .answer-button:active {
     transform: scale(1.05);
     box-shadow: 3px 3px 3px 3px rgba(10, 1, 54, 0.4);
     font-size: 130%;
 }
-
-
 
 .play-control {
     display: flex;
@@ -146,11 +132,12 @@ h4 {
     background-color: rgb(146, 240, 6);
     text-shadow: 0 0 10px black;
 }
+
+/* Add hover effect to play button. */
 .play-button:hover {
     box-shadow: 3px 3px 1px 1px rgba(10, 1, 54, 0.5);
     font-weight: bold;
 }
-
 
 .flag-rules {
     background-color: white;
@@ -158,8 +145,6 @@ h4 {
     border-radius: 10px;
     margin-left: 10px;
     margin-right: 10px;
-    /*padding-top: 5px;
-    padding-bottom: 5px;*/
 }
 
  ul, ol {
@@ -172,6 +157,7 @@ h4 {
     margin-left: 22px;
 }
 
+/* Set width of username Input box. */
 #username {
     width: 150px;
 }
@@ -195,7 +181,7 @@ h4 {
     text-shadow: 0 0 10px black;
     
 }
-
+/* Add hover effect to quit button. */
 .quit-button:hover {
     box-shadow: 4px 4px 0 0 rgba(10, 1, 54, 0.5);
     font-weight: bold;
@@ -221,6 +207,7 @@ h4 {
     padding: 5px;
     width: 100%;
     text-align: center;
+    background-color: rgb(146, 240, 6);
 }
 
 
@@ -236,30 +223,26 @@ h4 {
     body {
         align-items: center;
         justify-items: center;
-    }
+    }  
 
     .game-area {
         max-width: 500px;
         display: flex;
         flex-direction: column;
-        /*align-items: center;*/
         justify-items: center;
-        padding: 10px;
-        
+        padding: 10px;    
+        margin-top: 45px;  
     }
 
     .rules-image-container {
-        max-width: 100%;
-        
+        max-width: 100%;     
     }
 
     .rules-image {
         height: 150px;
         max-width: 100%;
-
     }
 
-   
     .image-answer-container {
         max-width: 100%;
         align-items: center;
@@ -267,7 +250,7 @@ h4 {
 
     .flag-image-container {
         width: 480px;
-        height: 250px;
+        height: 275px;
     }
     .flag-image {
         width: 90%;
@@ -283,11 +266,33 @@ h4 {
     .answer-button {
      max-width: 90%;
     }
+
+    .score-board-container {
+    width: 480px;
+    margin: 0px;
+    }
     
+    .scores-table {
+    width: 90%;
+    }
+    
+    .game-title h1 {
+        margin-top: 10px;
+    }
+
+    .game-title h2 {
+        margin-top: 10px;
+    }
+
+    h4 {
+        margin: 2px;
+    }
 }
 
 /*Media Query: larger devices (1024px and up) */
 @media screen and (min-width: 1024px){
+
+    /* Add hover effects to buttons. */
     .answer-button:hover {
         transform: scale(1.05);
         box-shadow: 3px 3px 3px 3px rgba(10, 1, 54, 0.4);
@@ -330,6 +335,7 @@ h4 {
 
 /*Media Query: larger devices (1400px and up) */
 @media screen and (min-width: 1400px){
+    
     .game-area {
         display: flex;
         flex-direction: column;

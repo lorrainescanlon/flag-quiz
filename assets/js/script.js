@@ -251,7 +251,7 @@ function gameOver(){
   let gameBox = document.getElementById('game-box');
   gameBox.innerHTML = `
     <div class= "game-title"> 
-        <h1>Game Over</h1>
+        <h1>Game Over</h1><br><br>
     </div>
 
     <div class = "score-board-container">
@@ -284,6 +284,7 @@ function gameOver(){
                 </tr>
             </tbody>
         </table>
+        <br><br>
     </div>
 
     <div class = "play-control">
