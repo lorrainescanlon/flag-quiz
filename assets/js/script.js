@@ -166,6 +166,7 @@ function loadQuest() {
 //Function to check the users answer and set the button background colour accordingly. Call increaseScore and removeFlag functions if the users answer is correct.
 function checkAnswer(event) {
     //Take the users answer from the DOM button object
+    disableButtons();
     let myAnswer = (event.target.innerText);
 
     //Compare myAnswer to Correct Answer the randomly generated flagIndex of the displayed flag
@@ -200,6 +201,7 @@ function clearAnswers() {
     }
     
     loadAnotherQ();
+    enableButtons();
 }
 
 /* 
@@ -238,6 +240,22 @@ function loadAnotherQ() {
 }
 
 
+//Function to disable buttons
+function disableButtons () {
+    let buttons = document.getElementsByClassName("answer-button");
+        for (let button of buttons){
+            button.setAttribute('disabled', '');
+        }
+}
+
+
+//Function to enable buttons
+function enableButtons() {
+    let buttons = document.getElementsByClassName("answer-button");
+        for (let button of buttons){
+            button.removeAttribute('disabled');
+        }
+}
 
 // Game over function to display final score, reset score and flagcount to 0.
 function gameOver(){
