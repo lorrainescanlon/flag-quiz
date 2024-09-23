@@ -37,7 +37,7 @@ Flag Quiz is an interactive game designed for school going children. The site ai
 
 
 ## Demo
-![How the website looks on different devices](docs/images/amIresponsive2.PNG)
+![How the website looks on different devices](docs/images/amIresponsive.PNG)
 
 ### A live demo of the website can be found [here](https://lorrainescanlon.github.io/flag-quiz/)
 
@@ -80,6 +80,8 @@ A uniform design has been used throught with consistent colour schemes and font 
 
 A fun background image is used throughout to help engage the younger user. Bright contrasting colours are used within the content containers and button elements to maintain the fun theme.
 
+Pseudo classes such as hover, active and focus are used to add styling like shadow and colour change to elements when they change states. This adds a layer of interest for the user.
+
 Font used are Raleway sans-serif.
 
 ## Technologies
@@ -96,10 +98,10 @@ The following features are included on the website.
   - The home page includes a text heading telling the user that this is a Flag Quiz. 
   - This section lists the game rules and contains a form where the the user is asked to enter a username of their choice.
   - The form uses validation, the user must enter a username in order to continue.
-  - When the user clicks the play button, form validation takes place. If the user has entered a username then the quiz page is loaded
-    otherwise they are prompted to enter a username to continue.
+  - When the user clicks the play button, form validation takes place. If the user has entered a username then the quiz page 
+    is loaded otherwise they are prompted to enter a username to continue.
 
-![Home Page](docs/images/homepageresize.jpg)
+![Home Page](docs/images/homepage.jpg)
 
 - __Quiz Page__
   - The quiz page displays the flag and 4 answer choices to the user. 
