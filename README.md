@@ -99,7 +99,7 @@ The following features are included on the website.
   - When the user clicks the play button, form validation takes place. If the user has entered a username then the quiz page is loaded
     otherwise they are prompted to enter a username to continue.
 
-![Home Page](docs/images/homepage.jpg)
+![Home Page](docs/images/homepageresize.jpg)
 
 - __Quiz Page__
   - The quiz page displays the flag and 4 answer choices to the user. 
