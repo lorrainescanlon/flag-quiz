@@ -184,8 +184,6 @@ function checkAnswer(event) {
   
    //set timeout before resetting button backgrounds
    setTimeout(clearAnswers, 1100);
-   
-   
 }
 
 // Function to increase the score
@@ -242,7 +240,7 @@ function loadAnotherQ() {
 }
 
 
-//Function to disable buttons
+//Function to disable buttons, prevents users from making multiple attempts at the question
 function disableButtons () {
     let buttons = document.getElementsByClassName("answer-button");
         for (let button of buttons){
@@ -271,9 +269,8 @@ function gameOver(){
   let gameBox = document.getElementById('game-box');
   gameBox.innerHTML = `
     <div id="game-over" class= "game-title"> 
-        <br><h1>Game<br>Over</h1><br><br>
-        <img class="star-image" id = "flag" src="assets/images/shootingstar/.png" alt="red shooting star">
-        <br><h3>Well Done<br>${username}!<br>You Scored ${score}</h3>
+        <br><h1>Game<br>Over</h1> 
+        <h3>Well Done<br>${username}!<br>You Scored ${score}</h3>
     </div>
     <div class = "score-board-container">
         <table id = "s-table" class = "scores-table" aria-label = "leaderboard of top 5 scorers">
@@ -326,6 +323,5 @@ function gameOver(){
     flagCount = 0;
     roundNum = 0;
     questNum = 0;
-
 }
 
