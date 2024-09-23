@@ -100,7 +100,6 @@ The following features are included on the website.
     otherwise they are prompted to enter a username to continue.
 
 ![Home Page](docs/images/homepageresize.jpg)
-![Laptop Home Page](docs/images/laptopsize.jpg)
 
 - __Quiz Page__
   - The quiz page displays the flag and 4 answer choices to the user. 
