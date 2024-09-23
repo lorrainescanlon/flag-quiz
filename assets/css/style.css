@@ -351,9 +351,9 @@ ul, ol {
         flex-direction: column;
         max-width: 800px;
         align-self: center;
-        margin-top: 75px;
+        margin-top: 80px;
     }
-    
+
     .round {
         display: flex;
         justify-content:space-around;
@@ -390,7 +390,7 @@ ul, ol {
         flex-direction: column;
         max-width: 800px;
         align-self: center;
-        margin-top: 75px;
+        margin-top: 90px;
     }
 
     .image-answer-container {

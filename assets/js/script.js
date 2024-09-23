@@ -8,7 +8,7 @@ const meaFlags = ["Algeria", "Azerbaijan", "Bahrain", "Egypt", "Eritrea", "Ethio
    "Lesotho", "Malawi", "Morocco", "Namibia", "Nigeria", "Oman", "Palestine", "Qatar", "Rwanda", "Saudi Arabia", "South Africa", "Sudan", "Swaziland", "Syria", "Tajikistan", "Togo",
    "Tunisia", "Turkey", "Uganda", "United Arab Emirates", "Uzbekistan", "Yemen", "Zambia", "Zimbabwe"];
 
-const seaFlags = ["Australia", "Bhutan", "Brunei", "China", "East Timor", "Fiji", "India", "Indonesia", "Japan", "Korea", "Macau", "Malaysia", "Maldives", "Mongolia", "New Zealand",
+const apFlags = ["Australia", "Bhutan", "Brunei", "China", "East Timor", "Fiji", "India", "Indonesia", "Japan", "Korea", "Macau", "Malaysia", "Maldives", "Mongolia", "New Zealand",
    "North Korea", "Pakistan", "Papua New Guinea", "Philippines", "Samoa", "Singapore", "Solomon Islands", "Sri Lanka", "Taiwan", "Thailand", "Vietnam"];
 
 const scores = [{userName: "Sarah", score: 10}, {userName: "John", score: 14}, {userName: "Jack", score: 8}, {userName: "Laura", score: 16}];
@@ -92,7 +92,7 @@ function newRound() {
         roundName = "Middle-East & Africa";
     }
     else if(roundNum === 4){
-        array = seaFlags.slice();
+        array = apFlags.slice();
         roundName = "Asia & Pacific";
     }
     else{
@@ -117,7 +117,10 @@ function shuffleArray() {
    loadQuest();
 }
 
-//Function to populate flag question components, consisting of a flag image and 4 option buttons. A round counter value and round name, a flag counter value and a score counter value.
+/*
+Function to populate flag question components, consisting of a flag image and 4 option buttons. A round counter value and round name, 
+a flag counter value and a score counter value.
+*/
 function loadQuest() {
     //Create a new array called shortArray for each flag question with 4 items to populate buttons and flag image.
     let shortArray = array.slice(0, 4);
