@@ -42,7 +42,7 @@ Flag Quiz is an interactive game designed for school going children. The site ai
 ### A live demo of the website can be found [here](https://lorrainescanlon.github.io/flag-quiz/)
 
 ## UX
-This website is aimed at children who have an interest in quizes and geography. It aims to appeal to childrens competitive nature and engage them to learn about world geopgraphy through visually stimulating flag images paired with some familiar and not so familiar country names. Children can easily interact with the content and naviagte the website while learning and competing with their peers.
+This website is aimed at children who have an interest in quizzes and geography. It aims to appeal to childrens competitive nature and engage them to learn about world geopgraphy through visually stimulating images paired with some familiar and not so familiar country names. Children can easily interact with the content and navigate the website while learning and competing with their peers.
 
 
 ## User stories
@@ -54,16 +54,18 @@ This website is aimed at children who have an interest in quizes and geography. 
  
 
 ### Strategy
-The goal is to create a fun and engaging quiz. The focus is on presenting the content clearly and ensure that the game is easily followed. 
+The goal is to create a fun and engaging quiz. The focus is on presenting the content clearly and ensuring that the game is easy to follow. 
 
 ### Scope
-To include features that enhanced the user experience and provide value to the user. Features such as the quiz page and scoreboard support this.
+To include features that enhance the user experience and provide value to the user. Features such as the quiz page with the colourful flag images and detailed 
+scoreboard support this.
 
 ### Structure
-The user is presented with a landing page which details the rules of the quiz. The landing page allows the user to input a username to start the quiz.
+The user is presented with a landing page which details the rules of the quiz. The landing page allows the user to input a username to start the quiz. 
+As the user naviagtes through the game the different parts of the site are revealed.
 
 **Website Sections:**
-- **_Home / Landing Page:_** A list of the rules and an inout box for users username.
+- **_Home / Landing Page:_** A list of the rules and an input box for the users username.
 - **_Quiz Page:_** A page that displays flags and multiple choice answers to the user.
 - **_Game Over:_** A page that displays the users final score and the top 5 quiz scores.
 
@@ -118,7 +120,7 @@ The following features are included on the website.
   - It displays a message telling the user their final score.
   - A table is also used to display the current top 5 scores.
   - A play again button allows the user to restart a new game.
-  
+
 ![Game Over](docs/images/gameover.jpg)    
 
 ### Future Features
