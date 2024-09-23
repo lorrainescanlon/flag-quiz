@@ -332,7 +332,6 @@ ul, ol {
         flex-direction: row;
         padding-left: 15px;
         padding-top:5px;
-        /*justify-content: space-evenly;*/
     }
 
     .user-name span{
@@ -352,7 +351,9 @@ ul, ol {
         flex-direction: column;
         max-width: 800px;
         align-self: center;
+        margin-top: 75px;
     }
+    
     .round {
         display: flex;
         justify-content:space-around;
@@ -389,6 +390,7 @@ ul, ol {
         flex-direction: column;
         max-width: 800px;
         align-self: center;
+        margin-top: 75px;
     }
 
     .image-answer-container {
