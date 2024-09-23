@@ -150,7 +150,6 @@ The following features are included on the website.
 - Lighthouse 
   - Testing was carried out on performance, accessibility and best practices with the attached results [Lighthouse Testing](docs/lighthouse.pdf)
 
-
 ## Bugs Encountered
 - While creating the javascript code to load the flag images I was running into problems with dynamic file paths. I was using array 
   indexes to correspond to image files. My array items were written with a leading capital letter which was easily overcome by using .toLowerCase. 
@@ -168,11 +167,14 @@ The following features are included on the website.
   some styles to the buttons as detailed at the following link 
   https://stackoverflow.com/questions/14750078/style-disabled-button-with-css
 
-
 ### Unfixed Bugs
-- While validating the javascript code with JSHint a message regarding an unused variable was returned. This variable is in fact a function name [JSHint](docs/jsHint.pdf). 
+- While validating the javascript code with JSHint a message regarding an unused variable was returned. This variable is in 
+  fact a function name [JSHint](docs/jsHint.pdf).
+- While the game works correctly and the code passes through all validators, I get an uncaught TypeError returned when the 
+  game finishes running ![Console Error](docs/images/consoleerror.PNG). 
 
- ## Deployment
+
+## Deployment
 - The site was deployed to GitHub pages. The steps to deploy are as follows: 
   - In the GitHub repository, navigate to the Settings tab. 
   - Under the General menu on the left side find the Code and Automation section and select Pages.
