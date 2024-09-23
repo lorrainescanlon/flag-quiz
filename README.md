@@ -147,6 +147,9 @@ The following features are included on the website.
   - No errors were found when passing through the official [Jigsaw validation](docs/cssValidation.pdf)
 - JavaScript
   - One message was returned regarding an unused variable, which is in fact a function name [JSHint](docs/jsHint.pdf)
+- Lighthouse 
+  - Testing was carried out on performance, accessibility and best practices with the attached results [Lighthouse Testing](docs/lighthouse.pdf)
+
 
 ## Bugs Encountered
 - While creating the javascript code to load the flag images I was running into problems with dynamic file paths. I was using array 
