@@ -100,6 +100,7 @@ The following features are included on the website.
     otherwise they are prompted to enter a username to continue.
 
 ![Home Page](docs/images/homepageresize.jpg)
+![Laptop Home Page](docs/images/laptopsize.jpg)
 
 - __Quiz Page__
   - The quiz page displays the flag and 4 answer choices to the user. 
@@ -108,7 +109,7 @@ The following features are included on the website.
   - When the user selects their answer, a correct answer is indicated by the answer button turning green and 
     an incorrect answer is indicated by the button turning red.
   - Once a choice is selected, the flag and answer choices refresh. The flag counter increases and if the user answered correctly their score also increases by 1.
-  - The flag is removed from the array if it is guessed correctly to elminate repition. 
+  - The flag is removed from the array if it is guessed correctly to eliminate repition. 
   - The Quit button returns the user to the homepage.
 
 ![Quiz Page](docs/images/quizpage.jpg)
