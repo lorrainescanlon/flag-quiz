@@ -236,20 +236,6 @@ ul, ol {
    border: 1px groove rgba(10, 1, 54, 0.501);
 }
 
-
-#s-table tr:nth-child(2) {
-    background-color: rgb(255, 255, 0); 
-}
-
-#s-table tr:nth-child(3) {
-    background-color: rgb(192, 192, 192);
-}
-
-#s-table tr:nth-child(4) {
-    background-color: rgb(243, 165, 87);
-}
-
-
 /*Media query: tablets and larger (768px and up)*/
 @media screen and (min-width: 768px) {
 
