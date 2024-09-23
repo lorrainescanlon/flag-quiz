@@ -139,16 +139,17 @@ The following features are included on the website.
 
 ### Validator Testing 
 - HTML
-  - No errors were returned when passing through the official [W3C validator](docs/HTMLvalidated.pdf)
+  - No errors were returned when passing through the official [W3C validator](docs/htmlValidation.pdf)
   - One warning was returned as detailed below in the unfixed bugs section.
 - CSS
-  - No errors were found when passing through the official [Jigsaw validator](docs/images/cssvalidated.PNG)
+  - No errors were found when passing through the official [Jigsaw validator](docs/cssValidation.pdf)
 
 ## Bugs Encountered
 - While creating the javascript code to load the flag images I was running into problems with 
-  my dynamic file paths. I was using array indexes to correspond to image files. The problem was
-  that my array items were written with a leading capital letter and some contained spaces but my image files 
-  were lower case with no spaces. I used the .toLowerCase and .replace functions to overcome this.
+  my dynamic file paths. I was using array indexes to correspond to image files. My array items were written with a leading 
+  capital letter which was easily overcome by using .toLowerCase. However some array items also contained spaces but my image files 
+  could not have spaces. After some research I found and used the .replace function to resolve this issue. Using the code found at the following link.
+  https://stackoverflow.com/questions/10800355/remove-whitespaces-inside-a-string-in-javascript
 
 - 
 - 
