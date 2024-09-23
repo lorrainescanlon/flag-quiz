@@ -327,6 +327,19 @@ ul, ol {
 /*Media Query: larger devices (1024px and up) */
 @media screen and (min-width: 1024px){
 
+    .user-name {
+        display: flex;
+        flex-direction: row;
+        padding-left: 15px;
+        padding-top:5px;
+        /*justify-content: space-evenly;*/
+    }
+
+    .user-name span{
+        padding-top: 5px;
+        margin-top: 2px;
+    }
+
     /* Add hover effects to buttons. */
     .answer-button:hover {
         transform: scale(1.05);
