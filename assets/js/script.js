@@ -273,9 +273,9 @@ function gameOver(){
   gameBox.innerHTML = `
     <div id="game-over" class= "game-title"> 
         <br><h1>Game<br>Over</h1> 
-        <h3>Well Done<br>${username}!<br>You Scored ${score}</h3>
     </div>
     <div class = "score-board-container">
+        <h3>Well Done<br>${username}!<br>You Scored ${score}</h3>
         <table id = "s-table" class = "scores-table" aria-label = "leaderboard of top 5 scorers">
             <tbody>
                 <th>Username</th>
